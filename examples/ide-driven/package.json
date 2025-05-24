@@ -1,0 +1,20 @@
+{
+  "name": "forge-ide-driven-example",
+  "version": "1.0.0",
+  "description": "Example of IDE-driven usage of the Forge framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "forge",
+    "ide",
+    "example"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@forge/dual-mode": "^1.0.0",
+    "@forge/test-framework": "^1.1.0"
+  }
+}

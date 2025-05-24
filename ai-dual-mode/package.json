@@ -1,5 +1,5 @@
 {
-  "name": "ai-dual-mode",
+  "name": "@forge/dual-mode",
   "version": "1.0.0",
   "description": "Reusable dual-mode architecture for AI-enhanced developer tools - supports IDE context generation and API automation",
   "main": "index.js",

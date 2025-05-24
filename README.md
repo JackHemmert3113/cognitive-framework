@@ -3,8 +3,10 @@
 > Open-source framework for human-AI collaborative development
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/node/v/@forge/dual-mode.svg)](https://nodejs.org)
+[![Node.js Version](https://img.shields.io/node/v/node?logo=node.js&logoColor=white&label=node&color=green)](https://nodejs.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![GitHub Issues](https://img.shields.io/github/issues/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/issues)
+[![GitHub Discussions](https://img.shields.io/github/discussions/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/discussions)
 
 Forge provides the foundational tools and patterns for building applications where humans and AI work together seamlessly. Whether you're creating developer tools, building applications, or exploring new paradigms of human-AI interaction, Forge gives you the building blocks.
 

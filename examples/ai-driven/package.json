@@ -1,0 +1,20 @@
+{
+  "name": "forge-ai-driven-example",
+  "version": "1.0.0",
+  "description": "Example of AI-driven usage of the Forge framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "forge",
+    "ai",
+    "example"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@forge/dual-mode": "^1.0.0",
+    "@forge/test-framework": "^1.1.0"
+  }
+}

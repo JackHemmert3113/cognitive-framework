@@ -1,4 +1,4 @@
-const { AIDualMode } = require('ai-dual-mode');
+const { AIDualMode } = require('@forge/dual-mode');
 const path = require('path');
 
 /**
@@ -7,7 +7,7 @@ const path = require('path');
 class TestFrameworkProcessor {
   async analyzeForIDE(testResults) {
     const analysis = this.analyzeTestResults(testResults);
-    
+
     return {
       context: {
         summary: analysis.summary,
@@ -17,25 +17,25 @@ class TestFrameworkProcessor {
         slowTests: analysis.slowTests,
         criticalIssues: analysis.criticalIssues
       },
-      
+
       analysis: this.generateMarkdownReport(analysis),
-      
+
       prompts: this.generateTestPrompts(analysis),
-      
+
       patterns: `- Follow existing test patterns
 - Use Jest for all tests
 - Maintain >80% coverage
 - Keep tests under 1s`,
-      
+
       priorities: `1. Fix ${analysis.failedTests.length} failing tests
 2. Improve coverage for ${analysis.lowCoverageFiles.length} files
 3. Optimize ${analysis.slowTests.length} slow tests`
     };
   }
-  
+
   async prepareForAPI(testResults) {
     const analysis = this.analyzeTestResults(testResults);
-    
+
     return {
       messages: [
         {
@@ -69,11 +69,11 @@ Generate Jest tests for the files with lowest coverage.`
       responseFormat: { type: "json_object" }
     };
   }
-  
+
   async processAIResponse(aiResponse, testResults) {
     try {
       const suggestions = JSON.parse(aiResponse);
-      
+
       return {
         generatedTests: suggestions.tests || [],
         fixedTests: suggestions.fixes || [],
@@ -89,14 +89,14 @@ Generate Jest tests for the files with lowest coverage.`
       };
     }
   }
-  
+
   // Helper methods
   analyzeTestResults(results) {
     const packages = this.groupByPackage(results);
     const failedTests = results.filter(r => !r.passed);
     const slowTests = results.filter(r => r.duration > 1000);
     const lowCoverageFiles = results.filter(r => (r.coverage || 0) < 50);
-    
+
     return {
       summary: {
         totalTests: results.length,
@@ -114,7 +114,7 @@ Generate Jest tests for the files with lowest coverage.`
       coverageStats: this.calculateCoverageStats(results)
     };
   }
-  
+
   generateMarkdownReport(analysis) {
     return `# Test Framework Analysis Report
 Generated: ${new Date().toISOString()}
@@ -148,7 +148,7 @@ ${analysis.lowCoverageFiles.map(f => `- ${f.name}: ${f.coverage}%`).join('\n') |
 3. ${analysis.slowTests.length > 0 ? `Optimize ${analysis.slowTests.length} slow tests` : 'Performance is good ✅'}
 `;
   }
-  
+
   generateTestPrompts(analysis) {
     const prompts = [`# Test-Specific AI Prompts
 
@@ -190,7 +190,7 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
 
     return prompts.join('\n\n');
   }
-  
+
   // Utility methods
   groupByPackage(results) {
     return results.reduce((acc, test) => {
@@ -205,34 +205,34 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
       return acc;
     }, {});
   }
-  
+
   calculateAverage(numbers) {
     if (numbers.length === 0) return 0;
     return numbers.reduce((a, b) => a + b, 0) / numbers.length;
   }
-  
+
   getFailedPackages(packages) {
     return Object.entries(packages)
       .filter(([_, data]) => data.failed > 0)
       .map(([name]) => name);
   }
-  
+
   identifyCriticalIssues(results) {
     const issues = [];
     const failureRate = results.filter(r => !r.passed).length / results.length;
-    
+
     if (failureRate > 0.2) {
       issues.push(`High failure rate: ${(failureRate * 100).toFixed(1)}% of tests failing`);
     }
-    
+
     const avgCoverage = this.calculateAverage(results.map(r => r.coverage || 0));
     if (avgCoverage < 60) {
       issues.push(`Low overall coverage: ${avgCoverage.toFixed(1)}%`);
     }
-    
+
     return issues;
   }
-  
+
   calculateCoverageStats(results) {
     const coverages = results.map(r => r.coverage || 0);
     return {
@@ -249,7 +249,7 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
  */
 function createAITestFramework(config = {}) {
   const processor = new TestFrameworkProcessor();
-  
+
   return AIDualMode.create('AI Test Framework', processor, {
     mode: config.mode || 'auto',
     config: {

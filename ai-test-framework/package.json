@@ -1,5 +1,5 @@
 {
-  "name": "@your-utilities/ai-test-framework",
+  "name": "@forge/test-framework",
   "version": "1.1.0",
   "description": "AI-powered testing framework with enhanced developer experience",
   "main": "index-enhanced.js",
