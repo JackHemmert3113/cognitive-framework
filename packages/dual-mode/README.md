@@ -1,111 +1,169 @@
 # @forge/dual-mode
 
-## Overview
-This package enables tools to work in both IDE (context file) and API (direct AI) modes seamlessly. It provides a unified architecture that supports both workflows, making your tools flexible and future-proof. In IDE mode, it generates context files for your IDE's AI assistant, while in API mode, it provides direct AI integration for automation and programmatic use.
+A flexible library that enables tools to seamlessly operate in both **IDE mode** (for human-in-the-loop, context-driven workflows) and **API mode** (for automated, programmatic interaction with AI). Designed as a core part of the [Forge Framework](https://github.com/JackHemmert3113/forge-framework), `@forge/dual-mode` makes it easy to build developer tools and applications that work for both professional coders and pure AI automation.
 
-## Installation
+---
+
+## 🚀 Features
+
+- **Dual-Mode Operation**: Supports both IDE-driven and API-driven workflows.
+- **Automatic Mode Detection**: Uses environment and configuration to choose the correct mode.
+- **Context File Generation**: In IDE mode, generates `.ai/` context files for use with AI assistants.
+- **Direct API Integration**: In API mode, calls AI providers like OpenAI or Anthropic directly.
+- **Pluggable Architecture**: Easily integrate new AI providers or custom modes.
+
+---
+
+## 📦 Installation
+
 ```bash
 npm install @forge/dual-mode
+# or
+yarn add @forge/dual-mode
 ```
 
-## Key Features
-- **Automatic mode detection** - Detects whether to use IDE or API mode based on environment
-- **IDE context file generation** - Creates AI-ready context files that IDE assistants understand
-- **API provider abstraction** - Supports multiple AI providers with a unified interface
-- **Seamless mode switching** - Switch between modes without changing your code
+---
 
-## Usage Examples
+## 🧑‍💻 Usage
 
-### IDE Mode Example (generates context files)
-```javascript
+### Basic Example
+
+```js
 const { DualMode } = require('@forge/dual-mode');
 
-// Define your processor
-const processor = {
-  async analyzeForIDE(data) {
-    return {
-      context: { /* your analysis */ },
-      analysis: "# Markdown report",
-      prompts: "Custom AI prompts"
-    };
-  }
-};
-
-// Create instance with IDE mode
-const tool = DualMode.create({
-  name: 'My Tool',
-  processor,
-  mode: 'ide'
+const myTool = DualMode.create('my-tool', async (input) => {
+  // Your core logic here!
+  return { result: `Processed: ${input}` };
+}, {
+  // Optional config
+  mode: 'auto', // 'ide', 'api', or 'auto'
+  outputDir: './.ai'
 });
 
-// Process your data - generates files in .ai/ directory
-await tool.process(yourData);
+(async () => {
+  const data = "hello world";
+  const result = await myTool.process(data);
+  console.log('Output:', result);
+})();
 ```
 
-### API Mode Example (calls AI directly)
-```javascript
-const { DualMode } = require('@forge/dual-mode');
+---
 
-// Define your processor
-const processor = {
-  async prepareForAPI(data) {
-    return {
-      messages: [
-        { role: "system", content: "You are a helpful assistant" },
-        { role: "user", content: JSON.stringify(data) }
-      ]
-    };
-  },
-  
-  async processAIResponse(response, originalData) {
-    return { /* processed result */ };
-  }
-};
+## ⚙️ How It Works
 
-// Create instance with API mode
-const tool = DualMode.create({
-  name: 'My Tool',
-  processor,
+### IDE Mode
+
+- Generates context files in the `.ai/` directory (e.g., prompts, analysis, design docs).
+- These files are meant to be picked up by AI coding assistants in the IDE (Cursor, Copilot, etc.).
+- Lets developers stay in full control, review, and modify AI-generated suggestions.
+
+### API Mode
+
+- Bypasses files and communicates directly with AI APIs (like OpenAI).
+- Enables full automation—useful for scripts, bots, or CI/CD.
+- Ideal for no-code/low-code builders and automated workflows.
+
+### Auto Mode
+
+- Automatically detects the mode based on:
+  - Presence of API keys in environment/config
+  - TTY status (interactive terminal)
+  - Explicit config
+- Picks the best mode for the current environment.
+
+---
+
+## 🧩 API Reference
+
+### `DualMode.create(name, processor, options)`
+
+- **name** (`string`): The name of your tool or workflow.
+- **processor** (`function(input, context): Promise<output>`): The main function that performs the task.
+- **options** (`object`):
+  - `mode`: `'ide' | 'api' | 'auto'` (default: `'auto'`)
+  - `outputDir`: Where to write context files (default: `./.ai`)
+  - `aiProvider`: (API mode) Which AI provider to use (`'openai'`, `'anthropic'`, etc.)
+  - `apiKey`: (API mode) API key for provider
+  - ...other provider-specific settings
+
+#### `.process(input[, context])`
+
+Runs the tool in the detected mode.
+
+#### `.getMode()`
+
+Returns the current mode: `'ide'` or `'api'`.
+
+#### `.setMode(mode)`
+
+Manually override the mode.
+
+---
+
+## 🧰 Advanced Usage
+
+### Customizing Context File Generation
+
+```js
+const tool = DualMode.create('advanced-tool', processor, {
+  mode: 'ide',
+  outputDir: './.ai/custom-context'
+});
+```
+
+### Forcing API Mode
+
+```js
+const tool = DualMode.create('api-tool', processor, {
   mode: 'api',
-  apiKey: process.env.AI_API_KEY
+  aiProvider: 'openai',
+  apiKey: process.env.OPENAI_API_KEY
 });
-
-// Process your data - calls AI API directly
-const result = await tool.process(yourData);
 ```
 
-## API Reference
+---
 
-### DualMode.create()
-Creates a new dual-mode instance.
+## 🌟 Example Workflows
 
-```javascript
-DualMode.create(options)
-```
+### IDE-Driven (Human-in-the-Loop)
 
-Parameters:
-- `options` (Object):
-  - `name` (String): Name of your tool
-  - `processor` (Object): Implementation of the processor interface
-  - `mode` (String, optional): 'ide', 'api', or 'auto' (default: 'auto')
-  - `apiKey` (String, optional): API key for direct AI integration
-  - `outputDir` (String, optional): Directory for IDE context files (default: '.ai')
-  - `provider` (String, optional): AI provider to use (default: 'openai')
+1. Developer writes requirements.
+2. `@forge/dual-mode` generates `.ai/` context files.
+3. AI assistant in the IDE interprets files, generates code/tests.
+4. Developer reviews, edits, and approves results.
 
-### Processor Interface
-Your processor must implement these methods:
+### API-Driven (Automated)
 
-For IDE mode:
-- `analyzeForIDE(data)`: Generates context for IDE assistants
+1. An idea or requirement is submitted.
+2. `@forge/dual-mode` processes it via AI APIs—generates code, tests, or documentation.
+3. Results are returned directly, no manual intervention needed.
 
-For API mode:
-- `prepareForAPI(data)`: Prepares the request for the AI API
-- `processAIResponse(response, originalData)`: Processes the AI response
+---
 
-### Configuration Options
-- `mode`: 'ide', 'api', or 'auto'
-- `outputDir`: Directory for IDE context files
-- `provider`: AI provider ('openai', etc.)
-- `apiKey`: API key for direct AI integration
-- `apiEndpoint`: Custom API endpoint URL
-- `apiOptions`: Additional options for the AI provider
+## 🛠️ Integration with Forge Framework
+
+`@forge/dual-mode` is a core part of the [Forge Framework](https://github.com/JackHemmert3113/forge-framework). It works out-of-the-box with:
+
+- [`@forge/requirements`](../requirements) — for structured requirements
+- [`@forge/test-framework`](../test-framework) — for AI-powered testing
+
+---
+
+## 📂 Related Packages
+
+- [`@forge/requirements`](../requirements) — AI-readable requirements
+- [`@forge/test-framework`](../test-framework) — AI-generated test suites
+
+---
+
+## 📝 License
+
+MIT © Jack Hemmert
+
+---
+
+## 💡 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](../../CONTRIBUTING.md) for details.
+
+---

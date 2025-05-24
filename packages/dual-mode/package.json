@@ -1,0 +1,23 @@
+{
+  "name": "@forge/dual-mode",
+  "version": "1.0.0",
+  "description": "A flexible framework that enables tools to seamlessly operate in both IDE mode and API mode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "forge",
+    "ai",
+    "ide",
+    "api",
+    "dual-mode"
+  ],
+  "author": "Forge Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
