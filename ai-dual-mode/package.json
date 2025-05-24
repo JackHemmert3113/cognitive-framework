@@ -1,0 +1,44 @@
+{
+  "name": "ai-dual-mode",
+  "version": "1.0.0",
+  "description": "Reusable dual-mode architecture for AI-enhanced developer tools - supports IDE context generation and API automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint .",
+    "example:test": "node examples/test-framework.js",
+    "example:docs": "node examples/documentation.js"
+  },
+  "keywords": [
+    "ai",
+    "ide",
+    "api",
+    "developer-tools",
+    "dual-mode",
+    "copilot",
+    "cursor",
+    "automation",
+    "context-generation"
+  ],
+  "author": "JackHemmert3113",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackHemmert3113/ai-dual-mode"
+  },
+  "dependencies": {
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0"
+  },
+  "peerDependencies": {
+    "openai": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

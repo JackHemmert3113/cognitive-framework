@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "tool": "Documentation Generator",
+  "hints": [],
+  "context": {
+    "files": [
+      ".ai/context.json",
+      ".ai/analysis.md"
+    ],
+    "priority": "high"
+  }
+}
