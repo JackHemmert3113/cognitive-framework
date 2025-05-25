@@ -1,0 +1,39 @@
+{
+  "name": "forge-framework",
+  "version": "0.1.0",
+  "description": "Modular framework for human-AI collaborative software development.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0",
+    "build": "npm run build -w @forge/dual-mode && npm run build -w @forge/requirements && npm run build -w @forge/test-framework",
+    "example:ide-driven": "node examples/ide-driven",
+    "example:ai-driven": "node examples/ai-driven"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackHemmert3113/forge-framework.git"
+  },
+  "keywords": [
+    "ai",
+    "framework",
+    "collaboration",
+    "development",
+    "requirements",
+    "testing",
+    "adaptive",
+    "junie"
+  ],
+  "author": "Jack Hemmert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JackHemmert3113/forge-framework/issues"
+  },
+  "homepage": "https://github.com/JackHemmert3113/forge-framework#readme",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

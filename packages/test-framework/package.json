@@ -1,0 +1,36 @@
+{
+  "name": "@forge/test-framework",
+  "version": "0.1.0",
+  "description": "AI-Powered Testing framework for generating and validating tests with AI assistance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackHemmert3113/forge-framework.git",
+    "directory": "packages/test-framework"
+  },
+  "keywords": [
+    "testing",
+    "ai",
+    "framework",
+    "test-generation",
+    "validation"
+  ],
+  "author": "Jack Hemmert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JackHemmert3113/forge-framework/issues"
+  },
+  "homepage": "https://github.com/JackHemmert3113/forge-framework/tree/main/packages/test-framework#readme",
+  "dependencies": {
+    "@forge/dual-mode": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@forge/requirements": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

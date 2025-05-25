@@ -1,14 +1,14 @@
 # Forge Framework 🔨
 
-> Open-source framework for human-AI collaborative development
+A modular, open-source framework for building next-generation developer tools and workflows that combine the best of **human-in-the-loop (IDE-driven)** and **AI-driven (API)** development.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/node?logo=node.js&logoColor=white&label=node&color=green)](https://nodejs.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![GitHub Issues](https://img.shields.io/github/issues/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/issues)
 [![GitHub Discussions](https://img.shields.io/github/discussions/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/discussions)
 
-Forge provides the foundational tools and patterns for building applications where humans and AI work together seamlessly. Whether you're creating developer tools, building applications, or exploring new paradigms of human-AI interaction, Forge gives you the building blocks.
+Forge empowers developers and AI to collaborate seamlessly. Whether you're creating developer tools, building applications, or exploring new paradigms of human-AI interaction, Forge gives you the building blocks for flexible, modern workflows.
 
 ## 🌟 Key Features
 
@@ -16,6 +16,15 @@ Forge provides the foundational tools and patterns for building applications whe
 - **🎛️ Dual Mode Architecture** - Seamlessly switch between IDE assistance and API automation
 - **🧪 AI-Powered Testing** - Generate and validate tests with AI assistance
 - **🔄 Flexible Integration** - Works with any AI provider (OpenAI, Anthropic, local LLMs)
+- **AI Context File Generation** - Easily create `.ai/` context for AI copilots in your IDE
+- **Pluggable & Extensible** - Build custom tools, integrate new AI providers, and extend as needed
+
+## 🧩 Monorepo Structure
+
+- [`packages/dual-mode`](./packages/dual-mode): Dual-mode adapter for IDE and API-driven tools
+- [`packages/requirements`](./packages/requirements): Framework for structured, AI-readable requirements
+- [`packages/test-framework`](./packages/test-framework): AI-generated test suite integration
+- [`examples/`](./examples): Example projects and workflows
 
 ## 🚀 Quick Start
 
@@ -32,7 +41,15 @@ npm run example:ide-driven    # Developer-focused workflow
 npm run example:ai-driven     # AI-orchestrated workflow
 ```
 
-## 📦 Core Components
+## 📦 Packages
+
+| Package | Description |
+| ------- | ----------- |
+| [`@forge/dual-mode`](./packages/dual-mode) | Dual-mode adapter for AI tools |
+| [`@forge/requirements`](./packages/requirements) | Structured, AI-ready requirements |
+| [`@forge/test-framework`](./packages/test-framework) | AI-generated test suite integration |
+
+## 💻 Core Components
 
 ### Requirements Framework
 Transform ideas into actionable specifications that work for both humans and AI.
@@ -113,7 +130,17 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 📄 License
 
-Forge Framework is MIT licensed. See [LICENSE](LICENSE) for details.
+MIT © Jack Hemmert. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🏷️ Badges
+
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/JackHemmert3113/forge-framework/pulls)
+[![Issues](https://img.shields.io/github/issues/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/issues)
+[![Node Version](https://img.shields.io/badge/node-%3E=16-blue.svg)](https://nodejs.org/)
+[![Discussions](https://img.shields.io/github/discussions/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/discussions)
 
 ---
 

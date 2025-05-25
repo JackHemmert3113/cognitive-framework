@@ -1,23 +1,30 @@
 {
   "name": "@forge/dual-mode",
   "version": "1.0.0",
-  "description": "A flexible framework that enables tools to seamlessly operate in both IDE mode and API mode",
+  "description": "A flexible framework that enables tools to seamlessly operate in both IDE mode and API mode.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No tests yet\" && exit 0"
   },
   "keywords": [
     "forge",
     "ai",
     "ide",
     "api",
-    "dual-mode"
+    "dual-mode",
+    "workflow"
   ],
-  "author": "Forge Team",
+  "author": "Jack Hemmert",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JackHemmert3113/forge-framework.git",
+    "directory": "packages/dual-mode"
+  },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
