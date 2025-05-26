@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Forge Framework Agent Rules",
+  "description": "Configuration schema for AI agent compatibility rules",
+  "type": "object",
+  "required": ["version", "rules", "agentGuidelines"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "typescript": {
+          "$ref": "#/definitions/typescriptRules"
+        },
+        "projectStructure": {
+          "$ref": "#/definitions/projectStructureRules"
+        },
+        "errorPatterns": {
+          "$ref": "#/definitions/errorPatterns"
+        }
+      }
+    },
+    "agentGuidelines": {
+      "type": "object",
+      "properties": {
+        "general": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "beforeTypeCheck": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "onError": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "badges": {
+      "$ref": "#/definitions/badges"
+    }
+  },
+  "definitions": {
+    "typescriptRules": {
+      "type": "object",
+      "properties": {
+        "priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"]
+        },
+        "commands": {
+          "type": "object",
+          "properties": {
+            "forbidden": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["pattern", "reason", "fix"],
+                "properties": {
+                  "pattern": { "type": "string" },
+                  "reason": { "type": "string" },
+                  "fix": { "type": "string" }
+                }
+              }
+            },
+            "preferred": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["action", "commands"],
+                "properties": {
+                  "action": { "type": "string" },
+                  "commands": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "projectStructureRules": {
+      "type": "object",
+      "properties": {
+        "priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"]
+        },
+        "requiredFiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "location", "reason"],
+            "properties": {
+              "path": { "type": "string" },
+              "location": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "errorPatterns": {
+      "type": "object",
+      "properties": {
+        "recognizedErrors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["pattern", "cause", "fixes"],
+            "properties": {
+              "pattern": { "type": "string" },
+              "cause": { "type": "string" },
+              "fixes": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "badges": {
+      "type": "object",
+      "properties": {
+        "compatible": {
+          "$ref": "#/definitions/badge"
+        },
+        "needsSetup": {
+          "$ref": "#/definitions/badge"
+        },
+        "incompatible": {
+          "$ref": "#/definitions/badge"
+        }
+      }
+    },
+    "badge": {
+      "type": "object",
+      "required": ["markdown", "url"],
+      "properties": {
+        "markdown": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}
