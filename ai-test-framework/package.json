@@ -1,60 +1,43 @@
 {
-  "name": "@forge/test-framework",
-  "version": "1.1.0",
-  "description": "AI-powered testing framework with enhanced developer experience",
-  "main": "index-enhanced.js",
+  "name": "@forge/ai-test-framework",
+  "version": "1.0.0",
+  "description": "Agent-first AI-powered test framework - Support everything, force nothing",
+  "main": "index.js",
   "bin": {
-    "ai-test": "./index-enhanced.js",
-    "ai-test-init": "./cli.js"
-  },
-  "scripts": {
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint .",
-    "prepare": "npm run lint && npm test"
+    "ai-test-framework": "./bin/cli.js"
   },
   "keywords": [
     "testing",
     "ai",
-    "test-framework",
-    "jest",
-    "coverage",
-    "monorepo",
-    "automation",
-    "dx",
-    "developer-experience"
+    "agent-first",
+    "test-generation",
+    "multi-language",
+    "bdd",
+    "tdd"
   ],
-  "author": "JackHemmert3113",
-  "license": "MIT",
   "dependencies": {
-    "@faker-js/faker": "^8.4.0",
-    "chalk": "^4.1.2",
-    "chokidar": "^3.5.3",
-    "commander": "^11.0.0",
-    "lodash.debounce": "^4.0.8"
+    "@babel/parser": "^7.24.0",
+    "@babel/traverse": "^7.24.0",
+    "@cucumber/gherkin": "^28.0.0",
+    "@cucumber/messages": "^25.0.0",
+    "openai": "^4.0.0",
+    "commander": "^12.0.0",
+    "chalk": "^5.3.0",
+    "glob": "^10.3.0",
+    "js-yaml": "^4.1.0",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
-    "jest": "^29.0.0",
-    "@types/vscode": "^1.74.0"
+    "@types/node": "^20.0.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
   },
-  "peerDependencies": {
-    "jest": ">=27.0.0"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JackHemmert3113/Utilities"
-  },
-  "files": [
-    "index-enhanced.js",
-    "cli.js",
-    "generic-test-utils.js",
-    "lib/",
-    "vscode-extension/",
-    "README.md",
-    "LICENSE"
-  ]
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint .",
+    "build": "tsc"
+  }
 }
