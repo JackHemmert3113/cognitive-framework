@@ -1,10 +1,10 @@
 {
-  "name": "@forge/ai-test-framework",
+  "name": "@cognitive/cognitive-test-framework",
   "version": "1.0.0",
   "description": "Agent-first AI-powered test framework - Support everything, force nothing",
   "main": "index.js",
   "bin": {
-    "ai-test-framework": "./bin/cli.js"
+    "cognitive-test-framework": "./bin/cli.js"
   },
   "keywords": [
     "testing",

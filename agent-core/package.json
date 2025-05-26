@@ -1,7 +1,7 @@
 {
-  "name": "@forge/agent-core",
+  "name": "@cognitive/agent-core",
   "version": "0.1.0",
-  "description": "Core utilities and protocols for AI agents within Forge Framework.",
+  "description": "Core utilities and protocols for AI agents within Cognitive Framework.",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {

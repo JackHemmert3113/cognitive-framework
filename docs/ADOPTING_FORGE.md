@@ -11,10 +11,10 @@
 ### Use Self-Healing Agents Only
 
 ```bash
-npm install @forge/agent-core
+npm install @cognitive/agent-core
 ```
 ```js
-const { SelfHealingAgent } = require('@forge/agent-core');
+const { SelfHealingAgent } = require('@cognitive/agent-core');
 SelfHealingAgent.start();
 ```
 
@@ -31,10 +31,10 @@ AITestFramework.run({ path: './my-app' });
 ### Use Everything
 
 ```bash
-npm install @forge/agent-core @forge/ai-test-framework @forge/requirements-framework
+npm install @cognitive/agent-core @forge/ai-test-framework @forge/requirements-framework
 ```
 ```js
-const { SelfHealingAgent } = require('@forge/agent-core');
+const { SelfHealingAgent } = require('@cognitive/agent-core');
 const { AITestFramework } = require('@forge/ai-test-framework');
 const { RequirementsAnalyzer } = require('@forge/requirements-framework');
 

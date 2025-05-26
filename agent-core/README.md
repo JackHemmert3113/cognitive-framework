@@ -3,5 +3,5 @@
 Universal AI agents for ANY project.
 
 ```bash
-npm install @forge/agent-core
+npm install @cognitive/agent-core
 ```

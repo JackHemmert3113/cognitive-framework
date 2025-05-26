@@ -1,14 +1,14 @@
-# Forge Framework 🔨
+# Cognitive Framework 🔨
 
 A modular, open-source framework for building next-generation developer tools and workflows that combine the best of **human-in-the-loop (IDE-driven)** and **AI-driven (API)** development.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/node?logo=node.js&logoColor=white&label=node&color=green)](https://nodejs.org)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Issues](https://img.shields.io/github/issues/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/issues)
-[![GitHub Discussions](https://img.shields.io/github/discussions/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/discussions)
+[![GitHub Issues](https://img.shields.io/github/issues/JackHemmert3113/cognitive-framework.svg)](https://github.com/JackHemmert3113/cognitive-framework/issues)
+[![GitHub Discussions](https://img.shields.io/github/discussions/JackHemmert3113/cognitive-framework.svg)](https://github.com/JackHemmert3113/cognitive-framework/discussions)
 
-Forge empowers developers and AI to collaborate seamlessly. Whether you're creating developer tools, building applications, or exploring new paradigms of human-AI interaction, Forge gives you the building blocks for flexible, modern workflows.
+Cognitive empowers developers and AI to collaborate seamlessly. Whether you're creating developer tools, building applications, or exploring new paradigms of human-AI interaction, Cognitive gives you the building blocks for flexible, modern workflows.
 
 ## 🌟 Key Features
 
@@ -30,8 +30,8 @@ Forge empowers developers and AI to collaborate seamlessly. Whether you're creat
 
 ```bash
 # Clone the repository
-git clone https://github.com/JackHemmert3113/forge-framework.git
-cd forge-framework
+git clone https://github.com/JackHemmert3113/cognitive-framework.git
+cd cognitive-framework
 
 # Install dependencies
 npm install
@@ -45,9 +45,9 @@ npm run example:ai-driven     # AI-orchestrated workflow
 
 | Package | Description |
 | ------- | ----------- |
-| [`@forge/dual-mode`](./packages/dual-mode) | Dual-mode adapter for AI tools |
-| [`@forge/requirements`](./packages/requirements) | Structured, AI-ready requirements |
-| [`@forge/test-framework`](./packages/test-framework) | AI-generated test suite integration |
+| [`@cognitive/dual-mode`](./packages/dual-mode) | Dual-mode adapter for AI tools |
+| [`@cognitive/requirements`](./packages/requirements) | Structured, AI-ready requirements |
+| [`@cognitive/test-framework`](./packages/test-framework) | AI-generated test suite integration |
 
 ## 💻 Core Components
 
@@ -55,7 +55,7 @@ npm run example:ai-driven     # AI-orchestrated workflow
 Transform ideas into actionable specifications that work for both humans and AI.
 
 ```javascript
-const { RequirementsFramework } = require('@forge/requirements');
+const { RequirementsFramework } = require('@cognitive/requirements');
 
 // IDE-driven: Developer writes detailed specs
 const requirement = await framework.process({
@@ -74,7 +74,7 @@ const requirement = await framework.process(
 Build tools that work both as IDE assistants and standalone automation.
 
 ```javascript
-const { DualMode } = require('@forge/dual-mode');
+const { DualMode } = require('@cognitive/dual-mode');
 
 const tool = DualMode.create('My Tool', processor);
 
@@ -86,7 +86,7 @@ const result = await tool.process(data);
 Generate comprehensive test suites with AI assistance.
 
 ```javascript
-const { TestFramework } = require('@forge/test-framework');
+const { TestFramework } = require('@cognitive/test-framework');
 
 const tests = await testFramework.generateTests(requirement);
 const results = await testFramework.runTests();
@@ -94,7 +94,7 @@ const results = await testFramework.runTests();
 
 ## 🏗️ Architecture
 
-Forge enables two distinct development paradigms:
+Cognitive enables two distinct development paradigms:
 
 ### IDE-Driven Development
 Perfect for professional developers building complex applications
@@ -108,7 +108,7 @@ Ideal for rapid prototyping and standard patterns
 - Human provides guidance and validation
 - Fast path from idea to working code
 
-## 🤝 Built with Forge
+## 🤝 Built with Cognitive Framework
 
 - **[Your Project Here]** - Join our community and showcase what you've built!
 
@@ -121,8 +121,8 @@ Ideal for rapid prototyping and standard patterns
 
 ## 🌱 Community
 
-- [GitHub Discussions](https://github.com/JackHemmert3113/forge-framework/discussions) - Ask questions and share ideas
-- [Issue Tracker](https://github.com/JackHemmert3113/forge-framework/issues) - Report bugs and request features
+- [GitHub Discussions](https://github.com/JackHemmert3113/cognitive-framework/discussions) - Ask questions and share ideas
+- [Issue Tracker](https://github.com/JackHemmert3113/cognitive-framework/issues) - Report bugs and request features
 
 ## 🤝 Contributing
 
@@ -137,10 +137,10 @@ MIT © Jack Hemmert. See [LICENSE](LICENSE) for details.
 ## 🏷️ Badges
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/JackHemmert3113/forge-framework/pulls)
-[![Issues](https://img.shields.io/github/issues/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/JackHemmert3113/cognitive-framework/pulls)
+[![Issues](https://img.shields.io/github/issues/JackHemmert3113/cognitive-framework.svg)](https://github.com/JackHemmert3113/cognitive-framework/issues)
 [![Node Version](https://img.shields.io/badge/node-%3E=16-blue.svg)](https://nodejs.org/)
-[![Discussions](https://img.shields.io/github/discussions/JackHemmert3113/forge-framework.svg)](https://github.com/JackHemmert3113/forge-framework/discussions)
+[![Discussions](https://img.shields.io/github/discussions/JackHemmert3113/cognitive-framework.svg)](https://github.com/JackHemmert3113/cognitive-framework/discussions)
 
 ---
 

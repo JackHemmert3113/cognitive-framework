@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
 /**
- * AI Test Framework CLI
+ * Cognitive Test Framework CLI
  */
 
 const { Command } = require('commander');
-const AITestFramework = require('../index');
+const CognitiveTestFramework = require('../index');
 const packageJson = require('../package.json');
 
 const program = new Command();
 
 program
-  .name('ai-test-framework')
+  .name('cognitive-test-framework')
   .description('AI-powered test framework that supports everything, forces nothing')
   .version(packageJson.version);
 
@@ -23,7 +23,7 @@ program
   .option('--self-aware', 'Run self-aware analysis')
   .option('--requirements', 'Analyze requirements only')
   .action(async (options) => {
-    const framework = new AITestFramework();
+    const framework = new CognitiveTestFramework();
 
     if (options.selfAware) {
       const results = await framework.run('self-aware', options);
@@ -46,7 +46,7 @@ program
   .option('--force', 'Generate even if tests exist')
   .option('--dry-run', 'Show what would be generated')
   .action(async (options) => {
-    const framework = new AITestFramework({ mode: options.mode });
+    const framework = new CognitiveTestFramework({ mode: options.mode });
     const results = await framework.run('generate', options);
 
     if (options.dryRun) {
@@ -63,7 +63,7 @@ program
   .command('no-excuses')
   .description('Find ALL code without tests - no excuses!')
   .action(async () => {
-    const framework = new AITestFramework();
+    const framework = new CognitiveTestFramework();
     const results = await framework.run('self-aware', {
       path: process.cwd(),
       noExcuses: true
@@ -80,7 +80,7 @@ program
   .description('Generate comprehensive testing report')
   .option('-f, --format <format>', 'Output format (md/html/json)', 'md')
   .action(async (options) => {
-    const framework = new AITestFramework();
+    const framework = new CognitiveTestFramework();
     const results = await framework.run('report', options);
     console.log('📊 Report generated:', results.outputFile);
   });

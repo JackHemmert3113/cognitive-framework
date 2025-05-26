@@ -1,13 +1,13 @@
-# Contributing to Forge Framework
+# Contributing to Cognitive Framework
 
 ## Welcome!
-Thank you for your interest in contributing to the Forge Framework! This project aims to make AI-enhanced development accessible to everyone by providing foundational tools and patterns for building applications where humans and AI work together seamlessly. Your contributions help us build a better framework for human-AI collaborative development.
+Thank you for your interest in contributing to the Cognitive Framework! This project aims to make AI-enhanced development accessible to everyone by providing foundational tools and patterns for building applications where humans and AI work together seamlessly. Your contributions help us build a better framework for human-AI collaborative development.
 
 ## How to Contribute
-There are many ways to contribute to Forge Framework:
+There are many ways to contribute to Cognitive Framework:
 
-- **Reporting bugs**: If you find a bug, please create an issue in our [Issue Tracker](https://github.com/JackHemmert3113/forge-framework/issues) with detailed steps to reproduce it.
-- **Suggesting features**: Have an idea for a new feature? Share it in our [GitHub Discussions](https://github.com/JackHemmert3113/forge-framework/discussions) or create a feature request issue.
+- **Reporting bugs**: If you find a bug, please create an issue in our [Issue Tracker](https://github.com/JackHemmert3113/cognitive-framework/issues) with detailed steps to reproduce it.
+- **Suggesting features**: Have an idea for a new feature? Share it in our [GitHub Discussions](https://github.com/JackHemmert3113/cognitive-framework/discussions) or create a feature request issue.
 - **Submitting PRs**: Code contributions are always welcome! Fix bugs, add features, or improve documentation.
 - **Improving documentation**: Help us make our documentation more clear, comprehensive, and useful.
 
@@ -16,8 +16,8 @@ Follow these steps to set up your development environment:
 
 1. **Fork and clone the repository**:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/forge-framework.git
-   cd forge-framework
+   git clone https://github.com/YOUR-USERNAME/cognitive-framework.git
+   cd cognitive-framework
    ```
 
 2. **Install dependencies**:
@@ -66,7 +66,7 @@ To maintain code quality and consistency:
 All contributors are expected to adhere to our Code of Conduct. Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) to understand what kind of behavior is encouraged and what kind of behavior won't be tolerated.
 
 ## Questions?
-If you have any questions about contributing, feel free to ask in our [GitHub Discussions](https://github.com/JackHemmert3113/forge-framework/discussions). We're a friendly community and welcome newcomers!
+If you have any questions about contributing, feel free to ask in our [GitHub Discussions](https://github.com/JackHemmert3113/cognitive-framework/discussions). We're a friendly community and welcome newcomers!
 
 ---
 

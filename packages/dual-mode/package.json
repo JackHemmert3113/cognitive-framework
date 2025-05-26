@@ -1,5 +1,5 @@
 {
-  "name": "@forge/dual-mode",
+  "name": "@cognitive/dual-mode",
   "version": "1.0.0",
   "description": "A flexible framework that enables tools to seamlessly operate in both IDE mode and API mode.",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "test": "echo \"No tests yet\" && exit 0"
   },
   "keywords": [
-    "forge",
+    "cognitive",
     "ai",
     "ide",
     "api",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JackHemmert3113/forge-framework.git",
+    "url": "https://github.com/JackHemmert3113/cognitive-framework.git",
     "directory": "packages/dual-mode"
   },
   "engines": {
