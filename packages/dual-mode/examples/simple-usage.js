@@ -1,4 +1,5 @@
-const { DualMode } = require('@forge/dual-mode');
+const { adapters } = require('@cognitive/ai-core');
+const { AIDualMode } = adapters;
 
 // Define a simple processor
 const processor = {
@@ -13,7 +14,7 @@ const processor = {
       prompts: "What insights can you provide about this data?"
     };
   },
-  
+
   // For API mode
   async prepareForAPI(data) {
     return {
@@ -23,11 +24,11 @@ const processor = {
       ]
     };
   },
-  
+
   async processAIResponse(response, originalData) {
     // Extract the content from the AI response
     const content = response.choices[0].message.content;
-    
+
     return {
       originalData,
       aiAnalysis: content,
@@ -56,13 +57,13 @@ async function main() {
       complexity: "medium"
     }
   };
-  
+
   console.log("Processing data...");
-  
+
   try {
     // Use it - mode is automatically detected
     const result = await myTool.process(data);
-    
+
     console.log("Processing complete!");
     console.log("Result:", JSON.stringify(result, null, 2));
   } catch (error) {

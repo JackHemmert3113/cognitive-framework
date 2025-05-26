@@ -1,0 +1,34 @@
+{
+  "name": "@cognitive/ai-core",
+  "version": "0.1.0",
+  "description": "Core AI functionality for the Cognitive Framework, including adapters, model selectors, analyzers, test generation, and cost modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackHemmert3113/cognitive-framework.git",
+    "directory": "packages/ai-core"
+  },
+  "keywords": [
+    "ai",
+    "framework",
+    "adapters",
+    "model-selectors",
+    "analyzers",
+    "test-generation",
+    "cost-modules"
+  ],
+  "author": "Jack Hemmert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JackHemmert3113/cognitive-framework/issues"
+  },
+  "homepage": "https://github.com/JackHemmert3113/cognitive-framework/tree/main/packages/ai-core#readme",
+  "dependencies": {},
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

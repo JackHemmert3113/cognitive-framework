@@ -2,9 +2,9 @@
 
 > 🤖 Intelligent testing for modern JavaScript projects
 
-[![Version](https://img.shields.io/npm/v/@your-utilities/ai-test-framework)](https://www.npmjs.com/package/@your-utilities/ai-test-framework)
+[![Version](https://img.shields.io/npm/v/@cognitive/ai-core)](https://www.npmjs.com/package/@cognitive/ai-core)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-passing-green)](https://github.com/JackHemmert3113/Utilities)
+[![Tests](https://img.shields.io/badge/tests-passing-green)](https://github.com/JackHemmert3113/cognitive-framework)
 
 ## What is this?
 
@@ -20,4 +20,4 @@ The AI Test Framework is a smart testing tool that:
 ### 1. Install
 
 ```bash
-npm install -D @your-utilities/ai-test-framework
+npm install -D @cognitive/ai-core

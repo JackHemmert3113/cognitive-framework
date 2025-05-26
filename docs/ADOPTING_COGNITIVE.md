@@ -1,8 +1,8 @@
-# Adopting Forge Framework in Your Project
+# Adopting Cognitive Framework in Your Project
 
 ## Core Principles
 
-- **Take what you need:** Use any combination of Forge Framework modules.
+- **Take what you need:** Use any combination of Cognitive Framework modules.
 - **Plug-and-play:** All modules are designed for composability.
 - **Self-healing and self-discovery available everywhere.**
 
@@ -58,4 +58,8 @@ RequirementsAnalyzer.analyze();
 
 ## Philosophy
 
-> Forge Framework is designed to empower your agents. Use as much or as little as you need—no lock-in, always composable, always agent-first.
+> Cognitive Framework is designed to empower your agents. Use as much or as little as you need—no lock-in, always composable, always agent-first.
+
+## Migration Note
+
+If you're migrating from an earlier version, note that AI-related features are now available in the new `ai-core` module. This module centralizes all AI capabilities including test generation, requirements analysis, and other AI-powered features that were previously distributed across different packages.

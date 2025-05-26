@@ -1,4 +1,4 @@
-# Forge Framework: Agent-First Manifesto
+# Cognitive Framework: Agent-First Manifesto
 
 ## Core Principles
 

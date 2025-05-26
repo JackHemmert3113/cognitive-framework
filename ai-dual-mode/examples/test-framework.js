@@ -14,7 +14,7 @@ const testProcessor = {
       failed: testResults.filter(t => !t.passed).length,
       coverage: this.calculateAverageCoverage(testResults)
     };
-    
+
     return {
       context: {
         summary: `${analysis.totalTests} tests run, ${analysis.failed} failures`,
@@ -39,7 +39,7 @@ ${analysis.coverage < 80 ? '- Coverage below 80% threshold\n' : ''}
 - "Optimize tests taking >1s"`
     };
   },
-  
+
   async prepareForAPI(testResults) {
     return {
       messages: [
@@ -56,7 +56,7 @@ ${analysis.coverage < 80 ? '- Coverage below 80% threshold\n' : ''}
       responseFormat: { type: "json_object" }
     };
   },
-  
+
   async processAIResponse(response, originalData) {
     const suggestions = JSON.parse(response);
     return {
@@ -65,7 +65,7 @@ ${analysis.coverage < 80 ? '- Coverage below 80% threshold\n' : ''}
       estimatedCoverageGain: suggestions.coverageGain
     };
   },
-  
+
   calculateAverageCoverage(results) {
     const coverages = results.map(r => r.coverage || 0);
     return Math.round(coverages.reduce((a, b) => a + b, 0) / coverages.length);
@@ -80,19 +80,19 @@ async function runExample() {
     { name: 'api.test.js', passed: false, duration: 1567, coverage: 45 },
     { name: 'utils.test.js', passed: true, duration: 89, coverage: 92 }
   ];
-  
+
   // Create dual mode instance
   const tester = AIDualMode.create('Test Analyzer', testProcessor, {
-    mode: process.env.USE_API ? 'api' : 'ide',
+    mode: process.env.USE_COGNITIVE ? 'api' : 'ide',
     config: {
       ide: { outputDir: '.ai-test' },
       api: { 
-        apiKey: process.env.AI_API_KEY,
+        apiKey: process.env.COGNITIVE_API_KEY,
         model: 'gpt-3.5-turbo'
       }
     }
   });
-  
+
   try {
     const result = await tester.process(testResults);
     console.log('\n✅ Processing complete!');

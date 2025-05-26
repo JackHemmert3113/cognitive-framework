@@ -8,7 +8,7 @@ module.exports = {
 
   // React-specific configuration
   testEnvironment: 'jsdom',
-
+  
   // Additional setup files for React
   setupFiles: [
     '<rootDir>/src/setupTests.js'

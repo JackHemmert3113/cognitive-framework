@@ -1,5 +1,3 @@
-const { adapters } = require('@cognitive/ai-core');
-const { AIDualMode } = adapters;
 const path = require('path');
 
 /**
@@ -245,34 +243,6 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
   }
 }
 
-/**
- * Factory function to create AI-enhanced test framework
- */
-function createAITestFramework(config = {}) {
-  const processor = new TestFrameworkProcessor();
-
-  return AIDualMode.create('AI Test Framework', processor, {
-    mode: config.mode || 'auto',
-    config: {
-      ide: {
-        outputDir: config.outputDir || '.ai-test',
-        includeIDESpecific: true
-      },
-      api: {
-        apiKey: config.apiKey || process.env.AI_API_KEY,
-        model: config.model || 'gpt-4',
-        provider: config.provider || 'openai'
-      },
-      ci: {
-        outputFormat: 'json',
-        saveToFile: true,
-        outputFile: 'test-analysis.json'
-      }
-    }
-  });
-}
-
 module.exports = {
-  TestFrameworkProcessor,
-  createAITestFramework
+  TestFrameworkProcessor
 };

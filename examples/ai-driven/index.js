@@ -1,13 +1,14 @@
 /**
- * AI-Driven Example for Forge Framework
+ * AI-Driven Example for Cognitive Framework
  * 
- * This example demonstrates how to use the Forge framework in an AI-driven approach.
+ * This example demonstrates how to use the Cognitive framework in an AI-driven approach.
  */
 
-const { DualMode } = require('@forge/dual-mode');
-const { TestFramework } = require('@forge/test-framework');
+const { adapters, testGeneration } = require('@cognitive/ai-core');
+const { AIDualMode: DualMode } = adapters;
+const { TestFramework } = testGeneration;
 
-// Initialize the Forge framework components
+// Initialize the Cognitive framework components
 const dualMode = new DualMode({
   mode: 'ai',
   modelProvider: 'openai',
@@ -24,21 +25,21 @@ const testFramework = new TestFramework({
 // Example usage
 async function main() {
   console.log('Starting AI-driven example...');
-  
+
   // Generate test cases using AI
   const generatedTests = await dualMode.generateContent({
     prompt: 'Generate unit tests for a user authentication module',
     outputFormat: 'javascript'
   });
-  
+
   console.log('AI-generated tests:', generatedTests);
-  
+
   // Run the generated tests
   const testResults = await testFramework.runTests({
     contextType: 'ai',
     testContent: generatedTests
   });
-  
+
   console.log('Test results:', testResults);
 }
 

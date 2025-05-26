@@ -1,6 +1,6 @@
-# Forge Framework - AI-Driven Example
+# Cognitive Framework - AI-Driven Example
 
-This example demonstrates how to use the Forge framework in an AI-driven approach. The AI-driven approach leverages artificial intelligence to automate tasks, generate code, and enhance your development workflow.
+This example demonstrates how to use the Cognitive framework in an AI-driven approach. The AI-driven approach leverages artificial intelligence to automate tasks, generate code, and enhance your development workflow.
 
 ## Getting Started
 
@@ -17,9 +17,9 @@ This example demonstrates how to use the Forge framework in an AI-driven approac
 ## Features
 
 - Demonstrates AI-powered automation
-- Shows how to integrate Forge with AI models
+- Shows how to integrate Cognitive Framework with AI models
 - Provides examples of AI-assisted development workflows
 
 ## Documentation
 
-For more information about the Forge framework, please refer to the main documentation.
+For more information about the Cognitive framework, please refer to the main documentation.

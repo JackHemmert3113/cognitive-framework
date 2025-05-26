@@ -5,7 +5,7 @@ module.exports = {
   testRunner: 'jest',
   coverageThreshold: 80,
   cognitiveInsightsEnabled: true,
-
+  
   packages: {
     'shared': { 
       path: 'packages/shared',

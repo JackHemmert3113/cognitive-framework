@@ -1,14 +1,13 @@
 /**
+ * @cognitive/ai-core/adapters/dual-mode
+ * 
  * AI Dual Mode - Reusable architecture for AI-enhanced developer tools
  * Supports IDE mode (context generation) and API mode (direct AI integration)
- *
- * @author JackHemmert3113
- * @version 1.0.0
- * @date 2025-01-24
  */
 
 const fs = require('fs').promises;
 const path = require('path');
+const { validateProcessor, validateConfig } = require('./validation');
 
 class AIDualMode {
   constructor(options = {}) {
@@ -71,6 +70,18 @@ class AIDualMode {
 
     if (!this.processor) {
       throw new Error('No processor provided. Please provide a processor with analyzeForIDE and/or prepareForAPI methods.');
+    }
+
+    // Validate processor
+    const validationErrors = validateProcessor(this.processor);
+    if (validationErrors.length > 0) {
+      throw new Error(`Invalid processor: ${validationErrors.join(', ')}`);
+    }
+
+    // Validate config for the current mode
+    const configErrors = validateConfig(this.config, this.mode);
+    if (configErrors.length > 0) {
+      throw new Error(`Invalid configuration: ${configErrors.join(', ')}`);
     }
 
     return this.modeHandler.process(data, this.processor);

@@ -1,6 +1,6 @@
-# @forge/dual-mode
+# @cognitive/ai-core/adapters
 
-A flexible library that enables tools to seamlessly operate in both **IDE mode** (for human-in-the-loop, context-driven workflows) and **API mode** (for automated, programmatic interaction with AI). Designed as a core part of the [Forge Framework](https://github.com/JackHemmert3113/forge-framework), `@forge/dual-mode` makes it easy to build developer tools and applications that work for both professional coders and pure AI automation.
+A flexible library that enables tools to seamlessly operate in both **IDE mode** (for human-in-the-loop, context-driven workflows) and **API mode** (for automated, programmatic interaction with AI). Designed as a core part of the [Cognitive Framework](https://github.com/JackHemmert3113/cognitive-framework), `@cognitive/ai-core/adapters` makes it easy to build developer tools and applications that work for both professional coders and pure AI automation.
 
 ---
 
@@ -17,9 +17,9 @@ A flexible library that enables tools to seamlessly operate in both **IDE mode**
 ## 📦 Installation
 
 ```bash
-npm install @forge/dual-mode
+npm install @cognitive/ai-core
 # or
-yarn add @forge/dual-mode
+yarn add @cognitive/ai-core
 ```
 
 ---
@@ -29,9 +29,10 @@ yarn add @forge/dual-mode
 ### Basic Example
 
 ```js
-const { DualMode } = require('@forge/dual-mode');
+const { adapters } = require('@cognitive/ai-core');
+const { AIDualMode } = adapters;
 
-const myTool = DualMode.create('my-tool', async (input) => {
+const myTool = AIDualMode.create('my-tool', async (input) => {
   // Your core logic here!
   return { result: `Processed: ${input}` };
 }, {
@@ -75,7 +76,7 @@ const myTool = DualMode.create('my-tool', async (input) => {
 
 ## 🧩 API Reference
 
-### `DualMode.create(name, processor, options)`
+### `AIDualMode.create(name, processor, options)`
 
 - **name** (`string`): The name of your tool or workflow.
 - **processor** (`function(input, context): Promise<output>`): The main function that performs the task.
@@ -105,7 +106,10 @@ Manually override the mode.
 ### Customizing Context File Generation
 
 ```js
-const tool = DualMode.create('advanced-tool', processor, {
+const { adapters } = require('@cognitive/ai-core');
+const { AIDualMode } = adapters;
+
+const tool = AIDualMode.create('advanced-tool', processor, {
   mode: 'ide',
   outputDir: './.ai/custom-context'
 });
@@ -114,7 +118,10 @@ const tool = DualMode.create('advanced-tool', processor, {
 ### Forcing API Mode
 
 ```js
-const tool = DualMode.create('api-tool', processor, {
+const { adapters } = require('@cognitive/ai-core');
+const { AIDualMode } = adapters;
+
+const tool = AIDualMode.create('api-tool', processor, {
   mode: 'api',
   aiProvider: 'openai',
   apiKey: process.env.OPENAI_API_KEY
@@ -128,31 +135,31 @@ const tool = DualMode.create('api-tool', processor, {
 ### IDE-Driven (Human-in-the-Loop)
 
 1. Developer writes requirements.
-2. `@forge/dual-mode` generates `.ai/` context files.
+2. `@cognitive/ai-core/adapters` generates `.ai/` context files.
 3. AI assistant in the IDE interprets files, generates code/tests.
 4. Developer reviews, edits, and approves results.
 
 ### API-Driven (Automated)
 
 1. An idea or requirement is submitted.
-2. `@forge/dual-mode` processes it via AI APIs—generates code, tests, or documentation.
+2. `@cognitive/ai-core/adapters` processes it via AI APIs—generates code, tests, or documentation.
 3. Results are returned directly, no manual intervention needed.
 
 ---
 
-## 🛠️ Integration with Forge Framework
+## 🛠️ Integration with Cognitive Framework
 
-`@forge/dual-mode` is a core part of the [Forge Framework](https://github.com/JackHemmert3113/forge-framework). It works out-of-the-box with:
+`@cognitive/ai-core/adapters` is a core part of the [Cognitive Framework](https://github.com/JackHemmert3113/cognitive-framework). It works out-of-the-box with other modules in the `@cognitive/ai-core` package:
 
-- [`@forge/requirements`](../requirements) — for structured requirements
-- [`@forge/test-framework`](../test-framework) — for AI-powered testing
+- [`@cognitive/ai-core/analyzers`](../analyzers) — for structured requirements analysis
+- [`@cognitive/ai-core/testGeneration`](../test-generation) — for AI-powered testing
 
 ---
 
 ## 📂 Related Packages
 
-- [`@forge/requirements`](../requirements) — AI-readable requirements
-- [`@forge/test-framework`](../test-framework) — AI-generated test suites
+- [`@cognitive/ai-core/analyzers`](../analyzers) — AI-readable requirements
+- [`@cognitive/ai-core/testGeneration`](../test-generation) — AI-generated test suites
 
 ---
 
