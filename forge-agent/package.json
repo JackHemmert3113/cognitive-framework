@@ -1,0 +1,68 @@
+{
+  "name": "@forge/agent",
+  "version": "1.0.0",
+  "description": "AI agent compatibility tools for Forge Framework projects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "forge-agent": "./dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "agent-rules.json",
+    "schemas",
+    "AGENT_GUIDE.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check-types": "tsc --noEmit",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "validate:schema": "ajv validate -s schemas/agent-rules.schema.json -d agent-rules.json",
+    "prepublishOnly": "pnpm run build && pnpm test"
+  },
+  "keywords": [
+    "forge",
+    "agent",
+    "ai",
+    "copilot",
+    "typescript",
+    "validation",
+    "cli",
+    "framework"
+  ],
+  "author": "Forge Framework Team",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "ajv-cli": "^5.0.0"
+  },
+  "peerDependencies": {
+    "@forge/framework": "^1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@forge/framework": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/forge/agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/forge/agent/issues"
+  },
+  "homepage": "https://github.com/forge/agent#readme"
+}

@@ -1,0 +1,128 @@
+{
+  "$schema": "./schemas/agent-rules.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "2025-05-26T05:24:32Z",
+  "rules": {
+    "typescript": {
+      "priority": "critical",
+      "commands": {
+        "forbidden": [
+          {
+            "pattern": "npx typescript",
+            "reason": "typescript is not a CLI binary",
+            "fix": "Use 'npx tsc' instead"
+          },
+          {
+            "pattern": "typescript --",
+            "reason": "typescript is not a CLI binary",
+            "fix": "Use 'tsc' instead"
+          }
+        ],
+        "preferred": [
+          {
+            "action": "typeCheck",
+            "commands": [
+              "pnpm run check-types",
+              "npm run check-types",
+              "yarn check-types",
+              "npx tsc --noEmit"
+            ]
+          },
+          {
+            "action": "build",
+            "commands": [
+              "pnpm run build",
+              "npm run build",
+              "yarn build",
+              "npx tsc"
+            ]
+          }
+        ]
+      },
+      "packageJsonRequirements": {
+        "scripts": {
+          "check-types": {
+            "required": true,
+            "value": "tsc --noEmit",
+            "description": "Type check without emitting files"
+          }
+        }
+      }
+    },
+    "projectStructure": {
+      "priority": "high",
+      "requiredFiles": [
+        {
+          "path": "tsconfig.json",
+          "location": "root",
+          "reason": "TypeScript configuration"
+        },
+        {
+          "path": "package.json",
+          "location": "root",
+          "reason": "Project dependencies and scripts"
+        }
+      ],
+      "tsconfigRules": {
+        "requiredFields": ["compilerOptions", "include"],
+        "recommendedCompilerOptions": {
+          "strict": true,
+          "esModuleInterop": true,
+          "skipLibCheck": true,
+          "forceConsistentCasingInFileNames": true
+        }
+      }
+    },
+    "errorPatterns": {
+      "recognizedErrors": [
+        {
+          "pattern": "could not determine executable to run",
+          "cause": "Using 'npx typescript' instead of 'npx tsc'",
+          "fixes": [
+            "Replace 'npx typescript' with 'npx tsc'",
+            "Use 'pnpm run check-types' if available"
+          ]
+        },
+        {
+          "pattern": "Cannot find module 'typescript'",
+          "cause": "TypeScript not installed as devDependency",
+          "fixes": [
+            "Run: pnpm add -D typescript",
+            "Ensure typescript is in devDependencies"
+          ]
+        }
+      ]
+    }
+  },
+  "agentGuidelines": {
+    "general": [
+      "Always check for existing package.json scripts before using direct commands",
+      "Prefer pnpm over npm or yarn for Forge Framework projects",
+      "Validate project structure before making changes"
+    ],
+    "beforeTypeCheck": [
+      "Look for 'check-types' script in package.json",
+      "If found, use 'pnpm run check-types'",
+      "Otherwise, use 'npx tsc --noEmit'"
+    ],
+    "onError": [
+      "Check error against known patterns",
+      "Suggest appropriate fix from error patterns",
+      "Link to Forge Framework agent documentation"
+    ]
+  },
+  "badges": {
+    "compatible": {
+      "markdown": "![Agent Compatible](https://img.shields.io/badge/forge--agent-compatible-brightgreen)",
+      "url": "https://img.shields.io/badge/forge--agent-compatible-brightgreen"
+    },
+    "needsSetup": {
+      "markdown": "![Agent Setup Needed](https://img.shields.io/badge/forge--agent-needs%20setup-yellow)",
+      "url": "https://img.shields.io/badge/forge--agent-needs%20setup-yellow"
+    },
+    "incompatible": {
+      "markdown": "![Agent Incompatible](https://img.shields.io/badge/forge--agent-incompatible-red)",
+      "url": "https://img.shields.io/badge/forge--agent-incompatible-red"
+    }
+  }
+}
