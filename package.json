@@ -5,10 +5,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests yet\" && exit 0",
+    "test": "node test.js",
     "build": "npm run build -w @forge/dual-mode && npm run build -w @forge/requirements && npm run build -w @forge/test-framework",
     "example:ide-driven": "node examples/ide-driven",
-    "example:ai-driven": "node examples/ai-driven"
+    "example:ai-driven": "node examples/ai-driven",
+    "quickstart": "./quickstart.sh"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,15 @@
   },
   "homepage": "https://github.com/JackHemmert3113/forge-framework#readme",
   "workspaces": [
+    "agent-core",
     "packages/*"
   ],
   "engines": {
     "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@forge/dual-mode": "workspace:*",
+    "@forge/requirements": "workspace:*",
+    "@forge/test-framework": "workspace:*"
   }
 }

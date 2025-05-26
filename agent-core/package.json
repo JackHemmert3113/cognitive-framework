@@ -1,5 +1,32 @@
 {
   "name": "@forge/agent-core",
   "version": "0.1.0",
-  "main": "index.js"
+  "description": "Core utilities and protocols for AI agents within Forge Framework.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "echo \"No tests defined yet\" && exit 0"
+  },
+  "keywords": [
+    "ai-agent",
+    "copilot",
+    "junie",
+    "automation",
+    "framework",
+    "agent-core"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "index.js",
+    "index.d.ts"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0"
+  }
 }
