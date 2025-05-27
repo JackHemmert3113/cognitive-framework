@@ -116,4 +116,4 @@ MIT © Jack Hemmert
 
 We welcome contributions! Please see our [Contributing Guide](../../CONTRIBUTING.md) for details.
 
----
+For a step-by-step tutorial see the [Getting Started guide](../../docs/getting-started.md). Package APIs are listed in the [API Reference](../../docs/api-reference.md).
