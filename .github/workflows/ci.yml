@@ -41,6 +41,15 @@ run: |
       working-directory: ./ai-dual-mode
       run: npm run lint
 
+    - name: Install dependencies in ai-test-framework
+      working-directory: ./ai-test-framework
+      run: |
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
+
     - name: Lint ai-test-framework
       working-directory: ./ai-test-framework
       run: npm run lint

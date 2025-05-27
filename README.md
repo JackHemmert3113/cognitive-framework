@@ -34,7 +34,7 @@ git clone https://github.com/JackHemmert3113/cognitive-framework.git
 cd cognitive-framework
 
 # Install dependencies
-npm install
+npm ci
 
 # Run examples
 npm run example:ide-driven    # Developer-focused workflow
