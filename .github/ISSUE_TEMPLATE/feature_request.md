@@ -1,25 +1,22 @@
 ---
 name: Feature Request
-about: Suggest an idea for this project
-title: "[FEATURE] "
+about: Suggest new functionality for the project
+title: "[FEATURE] <short description>"
 labels: enhancement
-assignees: ''
 ---
 
-## Problem Description
-<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] -->
+## 🔧 Summary of the new feature
 
-## Proposed Solution
-<!-- A clear and concise description of what you want to happen. -->
+<!-- Describe the feature in a few sentences. -->
 
-## Alternatives Considered
-<!-- A clear and concise description of any alternative solutions or features you've considered. -->
+## 📄 Markdown files this should update or create
 
-## Package Affected
-<!-- Which package would this feature affect? -->
-- [ ] @forge/dual-mode
-- [ ] @forge/test-framework
-- [ ] Other (please specify):
+<!-- List documentation files to modify or add. -->
 
-## Additional Context
-<!-- Add any other context or screenshots about the feature request here. -->
+## 🧠 How it follows the documentation codex
+
+<!-- Explain how this request aligns with the AI-Test-Framework Documentation Codex. -->
+
+## 🧪 Test coverage plan
+
+<!-- Outline testing strategy for this feature. -->
