@@ -1,5 +1,5 @@
 {
-  "name": "@cognitive/test-framework",
+  "name": "@cognitive/ai-test-framework",
   "version": "0.1.0",
   "description": "AI-Powered Testing framework for generating and validating tests with AI assistance",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JackHemmert3113/cognitive-framework.git",
-    "directory": "packages/test-framework"
+    "directory": "packages/ai-test-framework"
   },
   "keywords": [
     "testing",
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/JackHemmert3113/cognitive-framework/issues"
   },
-  "homepage": "https://github.com/JackHemmert3113/cognitive-framework/tree/main/packages/test-framework#readme",
+  "homepage": "https://github.com/JackHemmert3113/cognitive-framework/tree/main/packages/ai-test-framework#readme",
   "dependencies": {
     "@cognitive/dual-mode": "^0.1.0",
     "@cognitive/ai-core": "^0.1.0"

@@ -29,7 +29,7 @@
     "@cognitive/dual-mode": "^0.1.0"
   },
   "peerDependencies": {
-    "@cognitive/test-framework": "^0.1.0"
+    "@cognitive/ai-test-framework": "^0.1.0"
   },
   "engines": {
     "node": ">=14.0.0"

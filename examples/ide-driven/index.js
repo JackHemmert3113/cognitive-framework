@@ -4,7 +4,7 @@
  * Shows how to generate IDE context files using the AI test framework.
  */
 
-const { createAITestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/ai-test-framework');
 
 // Minimal test result data for demonstration
 const testResults = [

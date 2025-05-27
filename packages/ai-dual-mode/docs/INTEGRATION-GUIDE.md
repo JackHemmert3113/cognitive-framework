@@ -143,13 +143,13 @@ async function runMyTool(data) {
 
 ## Complete Example: Cognitive Test Framework
 
-Here's how to integrate `ai-dual-mode` into the `@cognitive/test-framework` project:
+Here's how to integrate `ai-dual-mode` into the `@cognitive/ai-test-framework` project:
 
 ### 1. Update package.json
 
 ```json
 {
-  "name": "@cognitive/test-framework",
+  "name": "@cognitive/ai-test-framework",
   "version": "2.0.0",
   "description": "Monorepo test framework with AI assistance",
   "dependencies": {
@@ -163,7 +163,7 @@ Here's how to integrate `ai-dual-mode` into the `@cognitive/test-framework` proj
 ### 2. Create AI Integration Module
 
 ```javascript
-// packages/test-framework/lib/ai-integration.js
+// packages/ai-test-framework/lib/ai-integration.js
 const { AIDualMode } = require('ai-dual-mode');
 const path = require('path');
 
@@ -446,7 +446,7 @@ module.exports = {
 ### 3. Update Main Test Runner
 
 ```javascript
-// packages/test-framework/index.js
+// packages/ai-test-framework/index.js
 #!/usr/bin/env node
 
 const { runTests } = require('./lib/runner');

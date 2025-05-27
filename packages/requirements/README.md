@@ -93,7 +93,7 @@ framework.process(rawText)
 
 Works out-of-the-box with:
 - [`@cognitive/dual-mode`](../dual-mode) — Dual-mode context file/API integration
-- [`@cognitive/test-framework`](../test-framework) — Automatic test generation
+- [`@cognitive/ai-test-framework`](../ai-test-framework) — Automatic test generation
 
 ---
 

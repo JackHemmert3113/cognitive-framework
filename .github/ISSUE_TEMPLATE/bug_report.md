@@ -31,7 +31,7 @@ assignees: ''
 ## Package Affected
 <!-- Which package is affected by this bug? -->
 - [ ] @forge/dual-mode
-- [ ] @forge/test-framework
+- [ ] @cognitive/ai-test-framework
 - [ ] Other (please specify):
 
 ## Additional Context

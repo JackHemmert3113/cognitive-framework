@@ -40,8 +40,8 @@ run: |
       working-directory: ./ai-dual-mode
       run: npm run lint
 
-    - name: Install dependencies in packages/test-framework
-      working-directory: ./packages/test-framework
+    - name: Install dependencies in packages/ai-test-framework
+      working-directory: ./packages/ai-test-framework
       run: |
         if [ -f package-lock.json ]; then
           npm ci
@@ -53,14 +53,14 @@ run: |
       working-directory: ./ai-dual-mode
       run: npm run test:coverage
 
-    - name: Test test-framework
-      working-directory: ./packages/test-framework
+    - name: Test ai-test-framework
+      working-directory: ./packages/ai-test-framework
       run: npm run test:coverage
 
     - name: Build ai-dual-mode (if build script exists)
       working-directory: ./ai-dual-mode
       run: npm run build || echo "No build script found, skipping"
 
-    - name: Build test-framework (if build script exists)
-      working-directory: ./packages/test-framework
+    - name: Build ai-test-framework (if build script exists)
+      working-directory: ./packages/ai-test-framework
       run: npm run build || echo "No build script found, skipping"

@@ -5,7 +5,7 @@
  * existing test results and generate new tests.
  */
 
-const { createAITestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/ai-test-framework');
 
 // Sample test results that might come from a real test run
 const testResults = [

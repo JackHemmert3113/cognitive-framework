@@ -5,8 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "npm run test -w @cognitive/test-framework",
-    "build": "npm run build -w @cognitive/dual-mode && npm run build -w @cognitive/requirements && npm run build -w @cognitive/test-framework",
+    "test": "npm run test -w @cognitive/ai-test-framework",
+    "build": "npm run build -w @cognitive/dual-mode && npm run build -w @cognitive/requirements && npm run build -w @cognitive/ai-test-framework",
     "example:ide-driven": "node examples/ide-driven",
     "example:ai-driven": "node examples/ai-driven",
     "quickstart": "./quickstart.sh",
@@ -33,7 +33,6 @@
   },
   "homepage": "https://github.com/JackHemmert3113/cognitive-framework#readme",
   "workspaces": [
-    "agent-core",
     "packages/*"
   ],
   "engines": {
@@ -42,6 +41,6 @@
   "dependencies": {
     "@cognitive/dual-mode": "workspace:*",
     "@cognitive/requirements": "workspace:*",
-    "@cognitive/test-framework": "workspace:*"
+    "@cognitive/ai-test-framework": "workspace:*"
   }
 }

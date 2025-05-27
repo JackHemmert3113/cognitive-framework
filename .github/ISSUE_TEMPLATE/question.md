@@ -15,7 +15,7 @@ assignees: ''
 ## Which package are you using?
 <!-- Which package are you working with? -->
 - [ ] @forge/dual-mode
-- [ ] @forge/test-framework
+- [ ] @cognitive/ai-test-framework
 - [ ] Other (please specify):
 
 ## Additional Context
