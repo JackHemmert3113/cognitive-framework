@@ -1,49 +1,35 @@
 /**
  * AI-Driven Example for Cognitive Framework
- * 
- * This example demonstrates how to use the Cognitive framework in an AI-driven approach.
+ *
+ * Demonstrates using the AI test framework in API mode to analyze
+ * existing test results and generate new tests.
  */
 
-const { adapters, testGeneration } = require('@cognitive/ai-core');
-const { AIDualMode: DualMode } = adapters;
-const { TestFramework } = testGeneration;
+const { createAITestFramework } = require('@cognitive/test-framework');
 
-// Initialize the Cognitive framework components
-const dualMode = new DualMode({
-  mode: 'ai',
-  modelProvider: 'openai',
-  modelConfig: {
-    model: 'gpt-4',
-    temperature: 0.7
-  }
-});
+// Sample test results that might come from a real test run
+const testResults = [
+  { name: 'adds numbers', package: 'utils', passed: true, duration: 30, coverage: 85 },
+  { name: 'subtract numbers', package: 'utils', passed: false, duration: 120, coverage: 45 },
+  { name: 'renders component', package: 'ui', passed: true, duration: 1500, coverage: 60 }
+];
 
-const testFramework = new TestFramework({
-  dualMode
-});
-
-// Example usage
 async function main() {
   console.log('Starting AI-driven example...');
 
-  // Generate test cases using AI
-  const generatedTests = await dualMode.generateContent({
-    prompt: 'Generate unit tests for a user authentication module',
-    outputFormat: 'javascript'
+  // Initialize the framework in API mode. The OpenAI client will be mocked
+  // if the dependency is not installed.
+  const framework = createAITestFramework({
+    mode: 'api',
+    provider: 'openai',
+    model: 'gpt-4',
+    apiKey: 'demo-key'
   });
 
-  console.log('AI-generated tests:', generatedTests);
-
-  // Run the generated tests
-  const testResults = await testFramework.runTests({
-    contextType: 'ai',
-    testContent: generatedTests
-  });
-
-  console.log('Test results:', testResults);
+  const result = await framework.process(testResults);
+  console.log('AI framework result:', result);
 }
 
-// Run the example
 main().catch(error => {
   console.error('Error in AI-driven example:', error);
 });
