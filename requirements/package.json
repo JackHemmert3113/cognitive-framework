@@ -17,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/JackHemmert3113/forge-framework"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
   }
 }

@@ -22,7 +22,7 @@ Follow these steps to set up your development environment:
 
 2. **Install dependencies**:
    ```bash
-   npm install
+   npm ci
    ```
 
 3. **Run tests**:
