@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * dual-mode.js - Cognitive Framework module
  * Auto generated documentation block.
  *

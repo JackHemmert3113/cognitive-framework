@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * cli.js - Cognitive Framework module
  * Auto generated documentation block.
  *

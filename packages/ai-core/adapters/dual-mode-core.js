@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * Shared dual-mode implementation used by ai-core and ai-dual-mode
  *
  * Reusable architecture for AI-enhanced developer tools

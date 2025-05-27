@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core
  * 
  * Core AI functionality for the Cognitive Framework, including adapters, 

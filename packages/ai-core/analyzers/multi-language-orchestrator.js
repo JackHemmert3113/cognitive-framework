@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/analyzers/multi-language-orchestrator
  * 
  * Orchestrates test analysis across multiple programming languages.

@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/analyzers
  * 
  * Tools for analyzing code, requirements, and other content using AI.

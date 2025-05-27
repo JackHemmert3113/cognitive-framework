@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/utilities
  * 
  * Shared utility functions for AI-related operations.

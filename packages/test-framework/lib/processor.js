@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * processor.js - Cognitive Framework module
  * Auto generated documentation block.
  *
