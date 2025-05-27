@@ -8,6 +8,18 @@ Utility modules for interacting with AI providers.
 npm install @cognitive/ai-core
 ```
 
+### Provider Dependencies
+
+API mode requires installing the package for your chosen AI provider. For example, to
+use OpenAI run:
+
+```bash
+npm install openai
+```
+
+If the provider package is missing the framework will fall back to a mock provider
+that returns placeholder responses.
+
 ## Basic Usage
 
 ```javascript
