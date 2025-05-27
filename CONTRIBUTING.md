@@ -71,3 +71,24 @@ If you have any questions about contributing, feel free to ask in our [GitHub Di
 ---
 
 Built with ❤️ to make AI-enhanced development accessible to everyone. We appreciate your contributions!
+
+## Examples
+
+Run tests before pushing:
+
+```bash
+npm test
+```
+
+## ⚙️ Internal Design
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for how modules connect.
+
+## Version
+
+0.1.0
+
+## Links
+
+- [README](README.md)
+- [CHANGELOG](CHANGELOG.md)
