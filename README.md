@@ -21,10 +21,15 @@ Cognitive empowers developers and AI to collaborate seamlessly. Whether you're c
 
 ## 🧩 Monorepo Structure
 
+- [`packages/agent-core`](./packages/agent-core): Core agent functionality
+- [`packages/ai-core`](./packages/ai-core): Core AI functionality
+- [`packages/ai-dual-mode`](./packages/ai-dual-mode): AI-powered dual-mode adapter
+- [`packages/ai-test-framework`](./packages/ai-test-framework): AI-powered test framework
 - [`packages/dual-mode`](./packages/dual-mode): Dual-mode adapter for IDE and API-driven tools
+- [`packages/forge-requirements`](./packages/forge-requirements): Forge-specific requirements framework
 - [`packages/requirements`](./packages/requirements): Framework for structured, AI-readable requirements
-- [`packages/test-framework`](./packages/test-framework): AI-generated test suite integration
 - [`examples/`](./examples): Example projects and workflows
+- [`forge-agent/`](./forge-agent): Forge agent implementation
 
 ## 🚀 Quick Start
 
@@ -45,9 +50,14 @@ npm run example:ai-driven     # AI-orchestrated workflow
 
 | Package | Description |
 | ------- | ----------- |
+| [`@cognitive/agent-core`](./packages/agent-core) | Core agent functionality |
+| [`@cognitive/ai-core`](./packages/ai-core) | Core AI functionality |
+| [`@forge/dual-mode`](./packages/ai-dual-mode) | AI-powered dual-mode adapter |
+| [`@cognitive/ai-test-framework`](./packages/ai-test-framework) | AI-powered test framework |
 | [`@cognitive/dual-mode`](./packages/dual-mode) | Dual-mode adapter for AI tools |
+| [`@forge/requirements`](./packages/forge-requirements) | Forge-specific requirements framework |
 | [`@cognitive/requirements`](./packages/requirements) | Structured, AI-ready requirements |
-| [`@cognitive/test-framework`](./packages/test-framework) | AI-generated test suite integration |
+| [`@forge/agent`](./forge-agent) | Forge agent implementation |
 
 ## 💻 Core Components
 
@@ -86,7 +96,7 @@ const result = await tool.process(data);
 Generate comprehensive test suites with AI assistance.
 
 ```javascript
-const { createAITestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/ai-test-framework');
 
 const framework = createAITestFramework();
 const results = await framework.process({ path: './my-app' });

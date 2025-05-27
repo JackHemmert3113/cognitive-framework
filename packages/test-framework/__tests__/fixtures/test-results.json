@@ -1,5 +1,0 @@
-[
-  { "name": "adds numbers", "package": "utils", "passed": true, "duration": 30, "coverage": 85 },
-  { "name": "subtract numbers", "package": "utils", "passed": false, "duration": 120, "coverage": 45 },
-  { "name": "renders component", "package": "ui", "passed": true, "duration": 1500, "coverage": 60 }
-]
