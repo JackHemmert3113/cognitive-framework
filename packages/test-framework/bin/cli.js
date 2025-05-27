@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * cli.js - Cognitive Framework module
  * Auto generated documentation block.
@@ -13,7 +14,6 @@
 // 🧪 Tests
 // ⚙️ Config
 // 💡 Helpers or utilities
-#!/usr/bin/env node
 'use strict';
 
 let DualMode;
