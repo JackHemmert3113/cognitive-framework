@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-const { DualMode } = require('@cognitive/dual-mode');
+let DualMode;
+try {
+  ({ DualMode } = require('@cognitive/dual-mode'));
+} catch {
+  ({ DualMode } = require('../../dual-mode'));
+}
 const { TestProcessor } = require('../lib/processor');
 
 /**

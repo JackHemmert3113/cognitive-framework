@@ -5,7 +5,7 @@
  */
 
 const { TestFrameworkProcessor } = require('./test-framework-processor');
-const { AIDualMode } = require('../../adapters/dual-mode');
+const { AIDualMode } = require('../adapters/dual-mode');
 
 /**
  * Factory function to create AI-enhanced test framework

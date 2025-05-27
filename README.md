@@ -86,10 +86,11 @@ const result = await tool.process(data);
 Generate comprehensive test suites with AI assistance.
 
 ```javascript
-const { TestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/test-framework');
 
-const tests = await testFramework.generateTests(requirement);
-const results = await testFramework.runTests();
+const framework = createAITestFramework();
+const results = await framework.process({ path: './my-app' });
+console.log(results);
 ```
 
 ## 🏗️ Architecture
