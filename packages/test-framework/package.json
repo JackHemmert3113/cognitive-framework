@@ -7,7 +7,7 @@
     "cogtest": "bin/cli.js"
   },
   "scripts": {
-    "test": "node --test",
+    "test": "NODE_V8_COVERAGE=coverage node --test",
     "build": "echo \"Building test-framework\""
   },
   "repository": {
