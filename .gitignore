@@ -42,6 +42,6 @@ lerna-debug.log*
 tmp/
 temp/
 *.tmp
-
-# OS files
 Thumbs.db
+!ai-test-framework/package-lock.json
+

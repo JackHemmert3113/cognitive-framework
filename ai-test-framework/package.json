@@ -37,7 +37,7 @@
   },
   "scripts": {
     "test": "vitest",
-    "lint": "eslint .",
+    "lint": "eslint . --ignore-pattern \"examples/**\"",
     "build": "tsc"
   }
 }
