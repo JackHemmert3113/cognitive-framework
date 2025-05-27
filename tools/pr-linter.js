@@ -72,7 +72,12 @@ function checkJs(file) {
     return;
   }
   const lines = content.split(/\r?\n/).slice(0, 10);
-  const firstNonEmpty = lines.find(l => l.trim().length > 0);
+  let idx = 0;
+  // Skip leading shebang if present
+  while (idx < lines.length && lines[idx].trim().length === 0) idx++;
+  if (idx < lines.length && lines[idx].startsWith('#!')) idx++;
+  while (idx < lines.length && lines[idx].trim().length === 0) idx++;
+  const firstNonEmpty = lines[idx];
   if (!firstNonEmpty || !firstNonEmpty.trim().startsWith('/**')) {
     console.error(`❌ Missing header: ${path.relative(repoRoot, file)}`);
     hasError = true;
