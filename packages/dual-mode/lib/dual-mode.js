@@ -1,3 +1,18 @@
+/**
+ * dual-mode.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./dual-mode.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 'use strict';
 
 /**
@@ -159,4 +174,10 @@ class DualMode {
   }
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = { DualMode };

@@ -1,3 +1,18 @@
+/**
+ * validate.ts - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./validate.ts');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 import { Command } from 'commander';
 import chalk from 'chalk';
 import path from 'path';
@@ -5,6 +20,12 @@ import { validateProjectSetup } from '../../helpers/project-validator';
 import { validateTsConfig } from '../../helpers/tsconfig-validator';
 import { generateFixScript } from '../../helpers/project-validator';
 
+/**
+ * validateCommand exported API
+ * @example
+ * validateCommand();
+ */
+// Added in v1.0
 export const validateCommand = new Command('validate')
   .description('Validate project setup for agent compatibility')
   .option('-p, --path <path>', 'Project path to validate', '.')

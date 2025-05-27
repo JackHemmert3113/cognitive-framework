@@ -1,3 +1,18 @@
+/**
+ * test-framework-processor.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./test-framework-processor.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const path = require('path');
 
 /**
@@ -247,6 +262,12 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
   }
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = {
   TestFrameworkProcessor
 };

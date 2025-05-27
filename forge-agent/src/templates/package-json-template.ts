@@ -4,6 +4,12 @@
 
 import { PackageJsonTemplate } from '../types';
 
+/**
+ * FORGE_PACKAGE_SCRIPTS exported API
+ * @example
+ * FORGE_PACKAGE_SCRIPTS();
+ */
+// Added in v1.0
 export const FORGE_PACKAGE_SCRIPTS: PackageJsonTemplate = {
   scripts: {
     // Type checking - REQUIRED for agent compatibility
@@ -35,6 +41,12 @@ export const FORGE_PACKAGE_SCRIPTS: PackageJsonTemplate = {
   }
 };
 
+/**
+ * mergePackageScripts exported API
+ * @example
+ * mergePackageScripts();
+ */
+// Added in v1.0
 export function mergePackageScripts(
   existing: any,
   template: PackageJsonTemplate = FORGE_PACKAGE_SCRIPTS

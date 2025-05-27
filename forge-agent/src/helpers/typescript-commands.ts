@@ -4,6 +4,12 @@
 
 import { CommandOptions } from '../types';
 
+/**
+ * TYPESCRIPT_COMMANDS exported API
+ * @example
+ * TYPESCRIPT_COMMANDS();
+ */
+// Added in v1.0
 export const TYPESCRIPT_COMMANDS = {
   // Type checking commands
   typeCheck: {
@@ -29,6 +35,12 @@ export const TYPESCRIPT_COMMANDS = {
   }
 } as const;
 
+/**
+ * getTypeScriptCommand exported API
+ * @example
+ * getTypeScriptCommand();
+ */
+// Added in v1.0
 export function getTypeScriptCommand(operation: 'typeCheck' | 'build', options?: CommandOptions): string {
   if (operation === 'typeCheck') {
     if (options?.file) {

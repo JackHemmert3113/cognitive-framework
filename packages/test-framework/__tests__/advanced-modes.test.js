@@ -1,3 +1,18 @@
+/**
+ * advanced-modes.test.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./advanced-modes.test.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const { createAITestFramework } = require('..');
 const assert = require('node:assert');
 const { test } = require('node:test');

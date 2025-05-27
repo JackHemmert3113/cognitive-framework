@@ -34,6 +34,12 @@ function createAITestFramework(config = {}) {
   });
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = {
   createAITestFramework
 };

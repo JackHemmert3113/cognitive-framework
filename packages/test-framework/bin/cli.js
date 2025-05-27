@@ -1,3 +1,18 @@
+/**
+ * cli.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./cli.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 #!/usr/bin/env node
 'use strict';
 
@@ -29,4 +44,10 @@ if (require.main === module) {
   });
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = { runCLI };

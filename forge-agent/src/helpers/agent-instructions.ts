@@ -2,6 +2,12 @@
  * Agent Instructions for Forge Framework Projects
  */
 
+/**
+ * AGENT_INSTRUCTIONS exported API
+ * @example
+ * AGENT_INSTRUCTIONS();
+ */
+// Added in v1.0
 export const AGENT_INSTRUCTIONS = {
   typescript: {
     title: "TypeScript Command Usage",
@@ -49,6 +55,12 @@ export const AGENT_INSTRUCTIONS = {
   }
 };
 
+/**
+ * getAgentInstructions exported API
+ * @example
+ * getAgentInstructions();
+ */
+// Added in v1.0
 export function getAgentInstructions(context: 'pr-validation' | 'type-checking' | 'all'): string {
   const sections: string[] = [];
 

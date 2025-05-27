@@ -1,3 +1,18 @@
+/**
+ * simple-usage.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./simple-usage.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const { adapters } = require('@cognitive/ai-core');
 const { AIDualMode } = adapters;
 

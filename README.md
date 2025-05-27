@@ -169,7 +169,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for how modules interact and how prompts 
 
 ## Version
 
-0.1.0 – Custom prompts supported (Added in v0.1).
+1.0.0 – Custom prompts supported (Added in v0.1).
 
 ## Links
 
@@ -177,4 +177,5 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for how modules interact and how prompts 
 - [PROMPTS](PROMPTS.md)
 - [RECIPES](RECIPES.md)
 - [TROUBLESHOOTING](TROUBLESHOOTING.md)
+- [CONTRIBUTING](CONTRIBUTING.md)
 - [CHANGELOG](CHANGELOG.md)

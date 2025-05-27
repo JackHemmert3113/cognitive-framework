@@ -1,3 +1,18 @@
+/**
+ * pr-linter.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./pr-linter.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 #!/usr/bin/env node
 /**
  * PR Linter for Cognitive Framework

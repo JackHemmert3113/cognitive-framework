@@ -13,6 +13,12 @@ import {
 
 let cachedRules: AgentRules | null = null;
 
+/**
+ * loadAgentRules exported API
+ * @example
+ * loadAgentRules();
+ */
+// Added in v1.0
 export async function loadAgentRules(): Promise<AgentRules> {
   if (cachedRules) {
     return cachedRules;
@@ -32,6 +38,12 @@ export async function loadAgentRules(): Promise<AgentRules> {
   }
 }
 
+/**
+ * getPreferredCommand exported API
+ * @example
+ * getPreferredCommand();
+ */
+// Added in v1.0
 export async function getPreferredCommand(action: string): Promise<string | null> {
   const rules = await loadAgentRules();
   const preferred = rules.rules.typescript.commands.preferred.find(
@@ -41,6 +53,12 @@ export async function getPreferredCommand(action: string): Promise<string | null
   return preferred ? preferred.commands[0] : null;
 }
 
+/**
+ * isForbiddenCommand exported API
+ * @example
+ * isForbiddenCommand();
+ */
+// Added in v1.0
 export async function isForbiddenCommand(command: string): Promise<ForbiddenCheckResult> {
   const rules = await loadAgentRules();
 
@@ -57,11 +75,23 @@ export async function isForbiddenCommand(command: string): Promise<ForbiddenChec
   return { forbidden: false };
 }
 
+/**
+ * getBadge exported API
+ * @example
+ * getBadge();
+ */
+// Added in v1.0
 export async function getBadge(status: 'compatible' | 'needsSetup' | 'incompatible'): Promise<Badge> {
   const rules = await loadAgentRules();
   return rules.badges[status];
 }
 
+/**
+ * getErrorFix exported API
+ * @example
+ * getErrorFix();
+ */
+// Added in v1.0
 export async function getErrorFix(errorMessage: string): Promise<{
   pattern: string;
   cause: string;

@@ -6,6 +6,12 @@ import fs from 'fs';
 import path from 'path';
 import { ValidationIssue, TsConfigValidationResult } from '../types';
 
+/**
+ * validateTsConfig exported API
+ * @example
+ * validateTsConfig();
+ */
+// Added in v1.0
 export async function validateTsConfig(projectPath: string): Promise<TsConfigValidationResult> {
   const issues: ValidationIssue[] = [];
   const fixes: string[] = [];
