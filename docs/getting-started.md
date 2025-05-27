@@ -5,6 +5,7 @@ This guide shows how to install the Cognitive Framework and run the examples.
 ## Requirements
 
 - Node.js 16 or later
+- Provider libraries for API mode (e.g. `npm install openai`)
 
 ## Installation
 

@@ -9,6 +9,15 @@ const fs = require('fs').promises;
 const path = require('path');
 const { validateProcessor, validateConfig } = require('./validation');
 
+function hasPackage(pkg) {
+  try {
+    require.resolve(pkg);
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
 class AIDualMode {
   constructor(options = {}) {
     this.toolName = options.toolName || 'AI Tool';
@@ -297,22 +306,45 @@ class APIMode {
   initializeProvider() {
     switch (this.provider) {
       case 'openai':
-        try {
+        if (!hasPackage('openai')) {
+          console.warn('OpenAI package not installed. Using mock provider. Run: npm install openai');
+          this.useMockProvider();
+        } else {
           const OpenAI = require('openai');
           this.client = new OpenAI({ apiKey: this.apiKey });
-        } catch (error) {
-          throw new Error('OpenAI package not installed. Run: npm install openai');
         }
         break;
       case 'anthropic':
-        // Future implementation
-        throw new Error('Anthropic provider coming soon');
+        if (!hasPackage('@anthropic-ai/sdk')) {
+          console.warn('Anthropic package not installed. Using mock provider. Run: npm install @anthropic-ai/sdk');
+          this.useMockProvider();
+        } else {
+          const { Anthropic } = require('@anthropic-ai/sdk');
+          this.client = new Anthropic({ apiKey: this.apiKey });
+        }
+        break;
       case 'local':
         // Future implementation for local LLMs
         throw new Error('Local LLM support coming soon');
+      case 'mock':
+        this.useMockProvider();
+        break;
       default:
         throw new Error(`Unsupported AI provider: ${this.provider}`);
     }
+  }
+
+  useMockProvider() {
+    this.provider = 'mock';
+    this.client = {
+      chat: {
+        completions: {
+          create: async () => ({
+            choices: [{ message: { content: '[mock response]' } }]
+          })
+        }
+      }
+    };
   }
 
   async process(data, processor) {
