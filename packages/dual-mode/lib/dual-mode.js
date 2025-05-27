@@ -158,19 +158,42 @@ class DualMode {
    * @returns {Promise<any>} - The AI API response
    */
   async callAIAPI(prepared) {
-    // This is a placeholder for the actual API call
-    // In a real implementation, this would make an HTTP request to the AI provider's API
-    
-    // For now, just return a mock response
-    return {
-      choices: [
-        {
-          message: {
-            content: "This is a mock AI response"
-          }
-        }
-      ]
+    // Dynamically load the APIMode adapter to leverage existing provider logic
+    let APIMode;
+    try {
+      ({ APIMode } = require('../../ai-core/adapters'));
+    } catch {
+      // Fallback if package resolution differs when published
+      ({ APIMode } = require('../ai-core/adapters'));
+    }
+
+    const apiKey = this.options.apiKey ||
+                   process.env.AI_API_KEY ||
+                   process.env.OPENAI_API_KEY ||
+                   process.env.COGNITIVE_API_KEY;
+
+    const apiMode = new APIMode({
+      provider: this.options.provider,
+      apiKey,
+      toolName: this.name,
+      model: this.options.apiOptions?.model
+    });
+
+    const requestOptions = {
+      model: this.options.apiOptions?.model || 'gpt-4',
+      messages: prepared.messages,
+      temperature: prepared.temperature ?? 0.3,
+      max_tokens: prepared.maxTokens || 2000
     };
+
+    if (prepared.responseFormat) {
+      requestOptions.response_format = prepared.responseFormat;
+    }
+
+    // Use the provider client's chat completion API
+    const response = await apiMode.client.chat.completions.create(requestOptions);
+
+    return response;
   }
 }
 
