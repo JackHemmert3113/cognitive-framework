@@ -11,7 +11,7 @@ npm install @cognitive/test-framework
 ## Basic Usage
 
 ```javascript
-const { createAITestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/ai-core');
 
 const framework = createAITestFramework();
 framework.process({ path: './my-app' });
