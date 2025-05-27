@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/test-generation
  * 
  * AI-powered tools for generating and managing tests.

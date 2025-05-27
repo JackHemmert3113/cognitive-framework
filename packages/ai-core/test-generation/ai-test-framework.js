@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/test-generation/ai-test-framework
  * 
  * Factory function to create AI-enhanced test framework

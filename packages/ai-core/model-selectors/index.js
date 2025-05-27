@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/model-selectors
  * 
  * Logic for selecting appropriate AI models based on context and requirements.

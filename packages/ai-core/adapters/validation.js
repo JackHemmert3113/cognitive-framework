@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/adapters/validation
  * 
  * Validation utilities for AI Dual Mode

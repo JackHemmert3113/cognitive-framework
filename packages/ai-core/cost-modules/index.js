@@ -1,4 +1,9 @@
 /**
+ * Cognitive Framework
+ *
+ * MIT License
+ */
+/**
  * @cognitive/ai-core/cost-modules
  * 
  * Tools for tracking, managing, and optimizing AI usage costs.
