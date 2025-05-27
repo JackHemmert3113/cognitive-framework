@@ -14,7 +14,9 @@ class TestFrameworkProcessor {
         failedPackages: analysis.failedPackages,
         coverage: analysis.coverageStats,
         slowTests: analysis.slowTests,
-        criticalIssues: analysis.criticalIssues
+        criticalIssues: analysis.criticalIssues,
+        filePaths: testResults.files || [],
+        runnerResults: testResults.results || testResults.runnerResults || {}
       },
 
       analysis: this.generateMarkdownReport(analysis),
@@ -65,7 +67,9 @@ Generate Jest tests for the files with lowest coverage.`
       ],
       temperature: 0.3,
       maxTokens: 3000,
-      responseFormat: { type: "json_object" }
+      responseFormat: { type: "json_object" },
+      filePaths: testResults.files || [],
+      runnerResults: testResults.results || testResults.runnerResults || {}
     };
   }
 

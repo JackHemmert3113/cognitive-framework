@@ -6,5 +6,7 @@ const { test } = require('node:test');
 test('CLI runner processes project path in IDE mode', async () => {
   const cwd = path.join(__dirname, 'fixtures');
   const result = await runCLI([cwd]);
-  assert.deepStrictEqual(result, { analyzed: cwd });
+  assert.strictEqual(result.analyzed, cwd);
+  assert.ok(Array.isArray(result.files));
+  assert.strictEqual(result.results.code, 0);
 });
