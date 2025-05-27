@@ -5,7 +5,8 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "echo \"No tests yet\" && exit 0"
+    "test": "echo \"No tests yet\" && exit 0",
+    "build": "echo \"Building dual-mode\""
   },
   "keywords": [
     "cognitive",
@@ -26,5 +27,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
 }
