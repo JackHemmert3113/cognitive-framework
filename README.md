@@ -115,7 +115,7 @@ Ideal for rapid prototyping and standard patterns
 ## 📚 Documentation
 
 - [Getting Started Guide](docs/getting-started.md)
-- [Architecture Overview](docs/architecture.md)
+- [Architecture Overview](docs/ARCHITECTURE.md)
 - [API Reference](docs/api-reference.md)
 - [Contributing Guide](CONTRIBUTING.md)
 
