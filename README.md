@@ -146,3 +146,35 @@ MIT © Jack Hemmert. See [LICENSE](LICENSE) for details.
 ---
 
 Built with ❤️ to make AI-enhanced development accessible to everyone.
+
+## Examples
+
+Use the dual mode adapter with custom prompts:
+
+```javascript
+const { AIDualMode } = require('@cognitive/dual-mode');
+
+const processor = {
+  async analyzeForIDE(data) {
+    return { context: {}, analysis: '', prompts: 'Run lint > run tests' };
+  }
+};
+
+const tool = AIDualMode.create('demo', processor);
+```
+
+## 🔍 Under the Hood
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for how modules interact and how prompts are merged.
+
+## Version
+
+0.1.0 – Custom prompts supported (Added in v0.1).
+
+## Links
+
+- [MODES](MODES.md)
+- [PROMPTS](PROMPTS.md)
+- [RECIPES](RECIPES.md)
+- [TROUBLESHOOTING](TROUBLESHOOTING.md)
+- [CHANGELOG](CHANGELOG.md)
