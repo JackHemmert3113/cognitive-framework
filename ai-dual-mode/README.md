@@ -288,3 +288,5 @@ MIT © JackHemmert3113 - see [LICENSE](./LICENSE) file for details.
 ---
 
 Built with ❤️ to make AI-enhanced development tools accessible to everyone.
+Learn more in the [Getting Started guide](../docs/getting-started.md) and browse the [API Reference](../docs/api-reference.md).
+

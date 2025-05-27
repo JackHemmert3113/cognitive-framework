@@ -174,3 +174,6 @@ MIT © Jack Hemmert
 We welcome contributions! Please see our [Contributing Guide](../../CONTRIBUTING.md) for details.
 
 ---
+
+For a guided overview see the [Getting Started guide](../../docs/getting-started.md). Detailed APIs are available in the [API Reference](../../docs/api-reference.md).
+
