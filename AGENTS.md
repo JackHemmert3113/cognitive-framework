@@ -1,4 +1,4 @@
-# Forge Framework Agent Guidelines
+# Cognitive Framework Agent Guidelines
 
 ## Pull Request Format
 - Include a **Summary** section describing the changes.

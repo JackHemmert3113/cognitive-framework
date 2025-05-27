@@ -1,23 +1,14 @@
-# Inconsistent Project Naming: "Cognitive Framework" vs "Forge Framework"
+# Inconsistent Project Naming: "Cognitive Framework"
 
 ## Description
-There is inconsistent naming throughout the repository. The project appears to be transitioning from "Cognitive Framework" to "Forge Framework", but this change hasn't been fully implemented across all documentation and code.
+If you find any references to other project names please report them here so we can keep the documentation and code consistent.
 
 ## Evidence
-- The repository directory is named "forge-framework"
-- The newer component "forge-agent" uses the "@forge/agent" package name and references "@forge/framework"
-- However, the main package.json, README.md, and CONTRIBUTING.md still refer to the project as "Cognitive Framework"
-- All GitHub links in the main documentation point to "cognitive-framework" (e.g., https://github.com/JackHemmert3113/cognitive-framework)
+- File(s) and line number(s) showing the incorrect name.
 
 ## Impact
-This inconsistency can cause confusion for contributors and users of the framework. It also makes it difficult to understand the relationship between different components of the project.
+Keeping the project name consistent avoids confusion for contributors and users.
 
-## Suggested Solution
-Standardize the naming across all documentation and code:
-1. Update all references to "Cognitive Framework" to "Forge Framework" in README.md, CONTRIBUTING.md, and other documentation
-2. Update the package name in the root package.json from "cognitive-framework" to "forge-framework"
-3. Update all GitHub links to reflect the correct repository name
-4. Ensure all components use consistent naming conventions (e.g., "@forge/...")
+## Suggested Fix
+Provide a pull request or describe the location so maintainers can update it to **Cognitive Framework**.
 
-## Additional Notes
-If there's a specific reason for maintaining both names, please document this clearly to avoid confusion.

@@ -1,6 +1,6 @@
 # @cognitive/requirements
 
-A robust framework for defining, parsing, and managing software requirements in a way that’s readable and actionable for both humans and AI. Part of the [Forge Framework](https://github.com/JackHemmert3113/forge-framework).
+A robust framework for defining, parsing, and managing software requirements in a way that’s readable and actionable for both humans and AI. Part of the [Cognitive Framework](https://github.com/JackHemmert3113/cognitive-framework).
 
 ---
 

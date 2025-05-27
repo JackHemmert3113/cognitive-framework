@@ -35,7 +35,7 @@ export const rulesCommand = new Command('rules')
         return;
       }
 
-      console.log(chalk.blue('\n📋 Forge Framework Agent Rules\n'));
+      console.log(chalk.blue('\n📋 Cognitive Framework Agent Rules\n'));
       console.log(chalk.gray(`Version: ${rules.version}`));
       console.log(chalk.gray(`Last Updated: ${rules.lastUpdated}\n`));
 
