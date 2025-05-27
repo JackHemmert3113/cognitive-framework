@@ -102,7 +102,7 @@ Works out-of-the-box with:
 When you process a requirement, the following files may appear in `.ai/`:
 - `analysis.md` — AI-friendly requirement analysis
 - `acceptance_criteria.md` — Clear list of requirements
-- `prompts.md` — Prompts for AI code generation
+- `PROMPTS.md` — Prompts for AI code generation
 
 ---
 
