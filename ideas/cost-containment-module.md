@@ -1,7 +1,7 @@
 # AI-Enhanced Cognitive Framework Integration Plan
 
 ## Overview
-This plan outlines the integration of advanced AI concepts from the canonical `@cognitive/test-framework` into the broader cognitive-framework project, creating a self-aware, self-optimizing web application framework.
+This plan outlines the integration of advanced AI concepts from the canonical `@cognitive/ai-test-framework` into the broader cognitive-framework project, creating a self-aware, self-optimizing web application framework.
 
 ## Phase 1: Foundation (Weeks 1-2)
 
@@ -12,7 +12,7 @@ This plan outlines the integration of advanced AI concepts from the canonical `@
 - [ ] Create configuration schema for AI features
 
 ### 1.2 Integrate Self-Aware Analyzer
-- [ ] Port self-aware-analyzer from `@cognitive/test-framework`
+- [ ] Port self-aware-analyzer from `@cognitive/ai-test-framework`
 - [ ] Adapt analyzer for web application context
 - [ ] Create performance baseline collectors
 - [ ] Implement pattern detection algorithms
@@ -67,7 +67,7 @@ export class IntelligentModelSelector {
   - [ ] Load tests
 
 ### 3.2 Test Validation Framework
-- [ ] Port validation concepts from `@cognitive/test-framework`
+- [ ] Port validation concepts from `@cognitive/ai-test-framework`
 - [ ] Create test quality analyzer
 - [ ] Implement coverage prediction
 - [ ] Build test optimization engine

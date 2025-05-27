@@ -1,11 +1,11 @@
-# @cognitive/test-framework
+# @cognitive/ai-test-framework
 
 AI assisted test generation and execution.
 
 ## Installation
 
 ```bash
-npm install @cognitive/test-framework
+npm install @cognitive/ai-test-framework
 ```
 
 Provider packages are required when running in API mode. See
@@ -22,7 +22,7 @@ that returns placeholder responses.
 ## Basic Usage
 
 ```javascript
-const { createAITestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/ai-test-framework');
 
 const framework = createAITestFramework();
 framework.process({ path: './my-app' });
@@ -80,7 +80,7 @@ executes the new tests.
 ```javascript
 const fs = require('fs');
 const { runCLI } = require('jest');
-const { createAITestFramework } = require('@cognitive/test-framework');
+const { createAITestFramework } = require('@cognitive/ai-test-framework');
 
 async function main() {
   const { results } = await runCLI({ json: true }, [process.cwd()]);
