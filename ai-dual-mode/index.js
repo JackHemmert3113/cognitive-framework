@@ -1,2 +1,2 @@
-// Re-export shared dual-mode implementation for standalone usage
-module.exports = require('../packages/ai-core/adapters/dual-mode-core');
+// Re-export the shared dual-mode implementation from ai-core
+module.exports = require('../packages/ai-core/adapters/dual-mode');
