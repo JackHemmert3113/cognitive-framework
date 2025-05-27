@@ -1,7 +1,7 @@
 # AI-Enhanced Forge Framework Integration Plan
 
 ## Overview
-This plan outlines the integration of advanced AI concepts from ai-test-framework into the broader forge-framework project, creating a self-aware, self-optimizing web application framework.
+This plan outlines the integration of advanced AI concepts from the canonical `@cognitive/test-framework` into the broader forge-framework project, creating a self-aware, self-optimizing web application framework.
 
 ## Phase 1: Foundation (Weeks 1-2)
 
@@ -12,7 +12,7 @@ This plan outlines the integration of advanced AI concepts from ai-test-framewor
 - [ ] Create configuration schema for AI features
 
 ### 1.2 Integrate Self-Aware Analyzer
-- [ ] Port self-aware-analyzer from ai-test-framework
+- [ ] Port self-aware-analyzer from `@cognitive/test-framework`
 - [ ] Adapt analyzer for web application context
 - [ ] Create performance baseline collectors
 - [ ] Implement pattern detection algorithms
@@ -67,7 +67,7 @@ export class IntelligentModelSelector {
   - [ ] Load tests
 
 ### 3.2 Test Validation Framework
-- [ ] Port validation concepts from ai-test-framework
+- [ ] Port validation concepts from `@cognitive/test-framework`
 - [ ] Create test quality analyzer
 - [ ] Implement coverage prediction
 - [ ] Build test optimization engine
