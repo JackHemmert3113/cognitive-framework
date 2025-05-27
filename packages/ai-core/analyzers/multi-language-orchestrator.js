@@ -240,6 +240,12 @@ class RustAnalyzer extends BaseAnalyzer {
   }
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = {
   MultiLanguageOrchestrator,
   JavaScriptAnalyzer,

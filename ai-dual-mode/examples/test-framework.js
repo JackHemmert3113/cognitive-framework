@@ -107,4 +107,10 @@ if (require.main === module) {
   runExample();
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = { testProcessor };

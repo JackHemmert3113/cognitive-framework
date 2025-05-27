@@ -1,7 +1,28 @@
+/**
+ * rules.ts - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./rules.ts');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 import { Command } from 'commander';
 import chalk from 'chalk';
 import { loadAgentRules } from '../../helpers/rules-loader';
 
+/**
+ * rulesCommand exported API
+ * @example
+ * rulesCommand();
+ */
+// Added in v1.0
 export const rulesCommand = new Command('rules')
   .description('Display current agent compatibility rules')
   .option('--json', 'Output as JSON')

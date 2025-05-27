@@ -40,6 +40,12 @@ function validateConfig(config, mode) {
   return errors;
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = {
   validateProcessor,
   validateConfig

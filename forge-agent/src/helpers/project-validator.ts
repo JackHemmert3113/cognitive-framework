@@ -7,6 +7,12 @@ import path from 'path';
 import { ValidationResult, ValidationIssue, ScriptCheckResult } from '../types';
 import { TYPESCRIPT_COMMANDS } from './typescript-commands';
 
+/**
+ * validateProjectSetup exported API
+ * @example
+ * validateProjectSetup();
+ */
+// Added in v1.0
 export async function validateProjectSetup(projectPath: string): Promise<ValidationResult> {
   const issues: ValidationIssue[] = [];
   const fixes: string[] = [];
@@ -56,6 +62,12 @@ export async function validateProjectSetup(projectPath: string): Promise<Validat
   };
 }
 
+/**
+ * hasRecommendedScripts exported API
+ * @example
+ * hasRecommendedScripts();
+ */
+// Added in v1.0
 export function hasRecommendedScripts(packageJson: any): ScriptCheckResult {
   const scripts = packageJson.scripts || {};
   const missingScripts: string[] = [];
@@ -72,6 +84,12 @@ export function hasRecommendedScripts(packageJson: any): ScriptCheckResult {
   };
 }
 
+/**
+ * generateFixScript exported API
+ * @example
+ * generateFixScript();
+ */
+// Added in v1.0
 export function generateFixScript(issues: ValidationIssue[]): string {
   const fixes: string[] = [];
 

@@ -1,3 +1,18 @@
+/**
+ * processor.test.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./processor.test.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const { TestProcessor } = require('../lib/processor');
 const assert = require('node:assert');
 const { test } = require('node:test');

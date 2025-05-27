@@ -1,3 +1,18 @@
+/**
+ * create-framework.test.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./create-framework.test.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const fs = require('fs');
 const os = require('os');
 const path = require('path');

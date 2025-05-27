@@ -1,3 +1,18 @@
+/**
+ * ai-test-framework_lib_ai-integration.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./ai-test-framework_lib_ai-integration.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const { adapters } = require('@cognitive/ai-core');
 const { AIDualMode } = adapters;
 const path = require('path');
@@ -272,6 +287,12 @@ function createAITestFramework(config = {}) {
   });
 }
 
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = {
   TestFrameworkProcessor,
   createAITestFramework

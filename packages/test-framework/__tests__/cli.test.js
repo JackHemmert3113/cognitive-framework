@@ -1,3 +1,18 @@
+/**
+ * cli.test.js - Cognitive Framework module
+ * Auto generated documentation block.
+ *
+ * @example
+ * // require or import
+ * const mod = require('./cli.test.js');
+ */
+// Added in v1.0
+
+// 🚀 Quick Start
+// 🔍 Internal Design
+// 🧪 Tests
+// ⚙️ Config
+// 💡 Helpers or utilities
 const { runCLI } = require('..');
 const path = require('path');
 const assert = require('node:assert');

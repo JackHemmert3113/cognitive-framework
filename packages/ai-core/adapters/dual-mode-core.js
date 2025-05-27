@@ -476,6 +476,12 @@ class CIMode {
 }
 
 // Export everything needed
+/**
+ * exported exported API
+ * @example
+ * exported();
+ */
+// Added in v1.0
 module.exports = {
   AIDualMode,
   IDEMode,
