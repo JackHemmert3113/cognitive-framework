@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "NODE_V8_COVERAGE=coverage node --test",
+    "test:coverage": "NODE_V8_COVERAGE=coverage node --test",
     "build": "echo \"Building test-framework\""
   },
   "repository": {

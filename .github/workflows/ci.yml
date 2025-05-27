@@ -51,11 +51,11 @@ run: |
 
     - name: Test ai-dual-mode
       working-directory: ./ai-dual-mode
-      run: npm test
+      run: npm run test:coverage
 
     - name: Test test-framework
       working-directory: ./packages/test-framework
-      run: npm test
+      run: npm run test:coverage
 
     - name: Build ai-dual-mode (if build script exists)
       working-directory: ./ai-dual-mode
