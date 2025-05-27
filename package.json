@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "node test.js",
+    "test": "npm run test -w @cognitive/test-framework",
     "build": "npm run build -w @cognitive/dual-mode && npm run build -w @cognitive/requirements && npm run build -w @cognitive/test-framework",
     "example:ide-driven": "node examples/ide-driven",
     "example:ai-driven": "node examples/ai-driven",

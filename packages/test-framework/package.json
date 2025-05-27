@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "description": "AI-Powered Testing framework for generating and validating tests with AI assistance",
   "main": "index.js",
+  "bin": {
+    "cogtest": "bin/cli.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "echo \"Building test-framework\""
   },
   "repository": {
