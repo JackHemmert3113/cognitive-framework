@@ -5,7 +5,11 @@ const { test } = require('node:test');
 test('TestProcessor analyzeForIDE returns analyzed path', async () => {
   const processor = new TestProcessor();
   const result = await processor.analyzeForIDE('my-project');
-  assert.deepStrictEqual(result, { analyzed: 'my-project' });
+  assert.strictEqual(result.analyzed, 'my-project');
+  assert.ok(Array.isArray(result.files));
+  assert.ok(result.files.length > 0);
+  assert.ok(result.tempDir);
+  assert.strictEqual(result.results.code, 0);
 });
 
 test('TestProcessor processAIResponse maps ai output', async () => {
