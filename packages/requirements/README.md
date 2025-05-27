@@ -1,4 +1,4 @@
-# @forge/requirements
+# @cognitive/requirements
 
 A robust framework for defining, parsing, and managing software requirements in a way that’s readable and actionable for both humans and AI. Part of the [Forge Framework](https://github.com/JackHemmert3113/forge-framework).
 
@@ -17,9 +17,9 @@ A robust framework for defining, parsing, and managing software requirements in 
 ## 📦 Installation
 
 ```bash
-npm install @forge/requirements
+npm install @cognitive/requirements
 # or
-yarn add @forge/requirements
+yarn add @cognitive/requirements
 ```
 
 ---
@@ -29,7 +29,7 @@ yarn add @forge/requirements
 ### Basic Example
 
 ```js
-const { RequirementsFramework } = require('@forge/requirements');
+const { RequirementsFramework } = require('@cognitive/requirements');
 
 const framework = new RequirementsFramework({
   mode: 'ide-driven',
@@ -92,8 +92,8 @@ framework.process(rawText)
 ## 🛠️ Integration
 
 Works out-of-the-box with:
-- [`@forge/dual-mode`](../dual-mode) — Dual-mode context file/API integration
-- [`@forge/test-framework`](../test-framework) — Automatic test generation
+- [`@cognitive/dual-mode`](../dual-mode) — Dual-mode context file/API integration
+- [`@cognitive/test-framework`](../test-framework) — Automatic test generation
 
 ---
 
