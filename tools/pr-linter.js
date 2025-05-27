@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /**
  * PR Linter for Cognitive Framework
- * Checks for required documentation files and file-level JSDoc headers.
- * Also prints emoji usage summary per file.
+ *
+ * Ensures required docs exist, validates file level headers,
+ * and summarizes emoji usage.
  *
  * MIT License
  */
@@ -11,22 +12,31 @@ const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..');
 const requiredDocs = ['README.md', 'MODES.md'];
-const targetEmojis = ['🚀', '🔍', '🧪'];
+const targetEmojis = ['🚀', '🔍', '🧪', '⚙️'];
 
 let hasError = false;
+const emojiCounts = Object.fromEntries(targetEmojis.map(e => [e, 0]));
 
-requiredDocs.forEach(doc => {
-  const docPath = path.join(repoRoot, doc);
-  if (!fs.existsSync(docPath)) {
-    console.error(`Missing required doc: ${doc}`);
-    hasError = true;
+function checkRequiredDocs() {
+  for (const doc of requiredDocs) {
+    const docPath = path.join(repoRoot, doc);
+    if (!fs.existsSync(docPath)) {
+      console.error(`❌ Missing file: ${doc}`);
+      console.error(`Create a placeholder using tools/templates/${doc}.template.md`);
+      hasError = true;
+    }
   }
-});
-
-const emojiSummary = {};
+}
 
 function walk(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  let entries;
+  try {
+    entries = fs.readdirSync(dir, { withFileTypes: true });
+  } catch (err) {
+    console.warn(`⚠️ Could not read: ${path.relative(repoRoot, dir)}`);
+    return;
+  }
+
   for (const entry of entries) {
     if (entry.name === 'node_modules' || entry.name === '.git') continue;
     const full = path.join(dir, entry.name);
@@ -39,29 +49,43 @@ function walk(dir) {
 }
 
 function checkJs(file) {
-  const content = fs.readFileSync(file, 'utf8');
-  const header = content.split(/\r?\n/).slice(0, 10).join('\n');
-  if (!header.includes('/**')) {
-    console.error(`Missing file header in: ${path.relative(repoRoot, file)}`);
-    hasError = true;
+  let content;
+  try {
+    content = fs.readFileSync(file, 'utf8');
+  } catch (err) {
+    console.warn(`⚠️ Could not read: ${path.relative(repoRoot, file)}`);
+    return;
   }
-  const counts = {};
+  const lines = content.split(/\r?\n/).slice(0, 10);
+  const firstNonEmpty = lines.find(l => l.trim().length > 0);
+  if (!firstNonEmpty || !firstNonEmpty.trim().startsWith('/**')) {
+    console.error(`❌ Missing header: ${path.relative(repoRoot, file)}`);
+    hasError = true;
+  } else {
+    console.log(`✅ Valid header: ${path.relative(repoRoot, file)}`);
+  }
+
   for (const emoji of targetEmojis) {
     const match = content.match(new RegExp(emoji, 'g'));
-    counts[emoji] = match ? match.length : 0;
+    if (match) emojiCounts[emoji] += match.length;
   }
-  emojiSummary[path.relative(repoRoot, file)] = counts;
 }
 
+function printEmojiSummary() {
+  console.log('Emoji usage summary:');
+  for (const e of targetEmojis) {
+    console.log(` ${e} ${emojiCounts[e]}`);
+  }
+}
+
+checkRequiredDocs();
 walk(repoRoot);
-
-console.log('Emoji usage summary:');
-for (const [file, counts] of Object.entries(emojiSummary)) {
-  const parts = targetEmojis.map(e => `${e} ${counts[e]}`);
-  console.log(` - ${file}: ${parts.join(', ')}`);
-}
+printEmojiSummary();
 
 if (hasError) {
   console.error('PR Linter found issues.');
-  process.exitCode = 1;
+  process.exit(1);
+} else {
+  console.log('✅ PR Linter Passed');
+  process.exit(0);
 }
