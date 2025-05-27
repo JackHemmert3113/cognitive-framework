@@ -8,6 +8,17 @@ AI assisted test generation and execution.
 npm install @cognitive/test-framework
 ```
 
+Provider packages are required when running in API mode. See
+[@cognitive/ai-core](../ai-core/README.md) for details. For example, install the
+OpenAI client with:
+
+```bash
+npm install openai
+```
+
+If the provider package is missing the framework falls back to a mock provider
+that returns placeholder responses.
+
 ## Basic Usage
 
 ```javascript
@@ -15,6 +26,50 @@ const { createAITestFramework } = require('@cognitive/test-framework');
 
 const framework = createAITestFramework();
 framework.process({ path: './my-app' });
+```
+
+## Running Modes
+
+### IDE Mode
+
+1. Install the package.
+2. Create the framework with `mode: 'ide'`.
+3. Run `process()` on your test results and open the generated directory in your IDE.
+
+```javascript
+const framework = createAITestFramework({ mode: 'ide', outputDir: '.ai-test' });
+await framework.process(testResults);
+```
+
+Files like `context.json`, `analysis.md` and `prompts.md` appear in `.ai-test/`.
+
+### API Mode
+
+1. Install the provider package such as `openai`.
+2. Set `AI_API_KEY` or pass `apiKey` in the config.
+3. Run with `mode: 'api'` to get AI generated tests.
+
+```javascript
+const framework = createAITestFramework({
+  mode: 'api',
+  provider: 'openai',
+  apiKey: process.env.AI_API_KEY
+});
+const result = await framework.process(testResults);
+```
+
+If no provider package is found the framework uses the mock provider described
+in [@cognitive/ai-core](../ai-core/README.md).
+
+### CI Mode
+
+1. Configure `mode: 'ci'`.
+2. Run the framework in your CI pipeline.
+3. Review the JSON summary written to `test-analysis.json`.
+
+```javascript
+const framework = createAITestFramework({ mode: 'ci' });
+await framework.process(testResults); // creates test-analysis.json
 ```
 
 ## Full Workflow Example
@@ -72,6 +127,9 @@ const framework = createAITestFramework({
   `npm install --save-dev jest`.
 - **No API key** – Set `AI_API_KEY` in your environment or pass `apiKey` in the
   configuration. Without it the framework falls back to IDE mode.
+- **Provider package not installed** – Install the package for your selected AI
+  provider (e.g. `openai`). If it is missing the framework uses the mock
+  provider described in [@cognitive/ai-core](../ai-core/README.md).
 
 Learn more in the [Getting Started guide](../../docs/getting-started.md).
 Detailed APIs are listed in the [API Reference](../../docs/api-reference.md).
