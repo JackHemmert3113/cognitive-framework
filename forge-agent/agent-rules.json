@@ -97,7 +97,7 @@
   "agentGuidelines": {
     "general": [
       "Always check for existing package.json scripts before using direct commands",
-      "Prefer pnpm over npm or yarn for Forge Framework projects",
+      "Prefer pnpm over npm or yarn for Cognitive Framework projects",
       "Validate project structure before making changes"
     ],
     "beforeTypeCheck": [
@@ -108,7 +108,7 @@
     "onError": [
       "Check error against known patterns",
       "Suggest appropriate fix from error patterns",
-      "Link to Forge Framework agent documentation"
+      "Link to Cognitive Framework agent documentation"
     ]
   },
   "badges": {

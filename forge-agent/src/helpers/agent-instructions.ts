@@ -1,5 +1,5 @@
 /**
- * Agent Instructions for Forge Framework Projects
+ * Agent Instructions for Cognitive Framework Projects
  */
 
 /**

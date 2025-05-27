@@ -1,5 +1,5 @@
 /**
- * Standard package.json template for Forge Framework projects
+ * Standard package.json template for Cognitive Framework projects
  */
 
 import { PackageJsonTemplate } from '../types';

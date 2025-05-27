@@ -1,7 +1,7 @@
 {
   "name": "@forge/agent",
   "version": "1.0.0",
-  "description": "AI agent compatibility tools for Forge Framework projects",
+  "description": "AI agent compatibility tools for Cognitive Framework projects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -33,7 +33,7 @@
     "cli",
     "framework"
   ],
-  "author": "Forge Framework Team",
+  "author": "Cognitive Framework Team",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.3.0",

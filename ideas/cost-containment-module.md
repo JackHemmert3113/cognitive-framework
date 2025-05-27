@@ -1,12 +1,12 @@
-# AI-Enhanced Forge Framework Integration Plan
+# AI-Enhanced Cognitive Framework Integration Plan
 
 ## Overview
-This plan outlines the integration of advanced AI concepts from the canonical `@cognitive/test-framework` into the broader forge-framework project, creating a self-aware, self-optimizing web application framework.
+This plan outlines the integration of advanced AI concepts from the canonical `@cognitive/test-framework` into the broader cognitive-framework project, creating a self-aware, self-optimizing web application framework.
 
 ## Phase 1: Foundation (Weeks 1-2)
 
 ### 1.1 Create AI Core Module
-- [ ] Create `forge-framework-ai` package structure
+- [ ] Create `cognitive-framework-ai` package structure
 - [ ] Set up base AI adapter interfaces
 - [ ] Implement provider abstraction layer (OpenAI, Anthropic, etc.)
 - [ ] Create configuration schema for AI features
@@ -196,7 +196,7 @@ export class AIDocumentationGenerator {
 
 ### Directory Structure
 ```
-forge-framework/
+cognitive-framework/
 ├── packages/
 │   ├── @forge/ai-core/
 │   ├── @forge/cost-containment/     🆕
