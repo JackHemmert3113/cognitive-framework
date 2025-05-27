@@ -15,7 +15,7 @@ labels: enhancement
 
 ## 🧠 How it follows the documentation codex
 
-<!-- Explain how this request aligns with the AI-Test-Framework Documentation Codex. -->
+<!-- Explain how this request aligns with the Cognitive-Framework Documentation Codex. -->
 
 ## 🧪 Test coverage plan
 

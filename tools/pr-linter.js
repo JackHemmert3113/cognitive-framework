@@ -31,6 +31,7 @@ const targetEmojis = ['🚀', '🔍', '🧪', '⚙️'];
 
 let hasError = false;
 const emojiCounts = Object.fromEntries(targetEmojis.map(e => [e, 0]));
+const emojiCountsByFile = {};
 
 function checkRequiredDocs() {
   for (const doc of requiredDocs) {
@@ -80,14 +81,26 @@ function checkJs(file) {
     console.log(`✅ Valid header: ${path.relative(repoRoot, file)}`);
   }
 
+  const rel = path.relative(repoRoot, file);
+  const counts = Object.fromEntries(targetEmojis.map(e => [e, 0]));
   for (const emoji of targetEmojis) {
     const match = content.match(new RegExp(emoji, 'g'));
-    if (match) emojiCounts[emoji] += match.length;
+    if (match) {
+      emojiCounts[emoji] += match.length;
+      counts[emoji] += match.length;
+    }
   }
+  emojiCountsByFile[rel] = counts;
 }
 
 function printEmojiSummary() {
-  console.log('Emoji usage summary:');
+  console.log('Emoji usage summary per file:');
+  for (const file of Object.keys(emojiCountsByFile)) {
+    const counts = emojiCountsByFile[file];
+    const summary = targetEmojis.map(e => `${e}${counts[e]}`).join(' ');
+    console.log(` ${file}: ${summary}`);
+  }
+  console.log('Total usage:');
   for (const e of targetEmojis) {
     console.log(` ${e} ${emojiCounts[e]}`);
   }

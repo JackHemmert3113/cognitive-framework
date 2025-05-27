@@ -3,12 +3,12 @@ MIT License
 -->
 # Documentation Style Guide
 
-This guide summarizes the **AI-Test-Framework Documentation Codex** and serves as a quick reference for contributors.
+This guide summarizes the **Cognitive-Framework Documentation Codex** and serves as a quick reference for contributors.
 
 ## Canonical References
 - [Project README](../README.md)
-- [Prompt Library](../requirements/PROMPTS.md)
-- [Architecture Overview](./ARCHITECTURE.md)
+- [Prompt Library](../PROMPTS.md)
+- [Architecture Overview](../ARCHITECTURE.md)
 
 ## Emoji Tags
 Use emojis to highlight sections:
@@ -51,4 +51,4 @@ In-depth explanation.
 Steps to verify the feature works.
 ```
 
-Refer to the full AI-Test-Framework Documentation Codex for complete guidelines.
+Refer to the full Cognitive-Framework Documentation Codex for complete guidelines.
