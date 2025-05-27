@@ -13,7 +13,6 @@
 // 🧪 Tests
 // ⚙️ Config
 // 💡 Helpers or utilities
-#!/usr/bin/env node
 /**
  * PR Linter for Cognitive Framework
  *
