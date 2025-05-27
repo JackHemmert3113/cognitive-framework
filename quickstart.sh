@@ -1,4 +1,3 @@
-cat > quickstart.sh << 'EOF'
 #!/bin/bash
 
 # Cognitive Framework Quick Start Guide
@@ -47,6 +46,4 @@ echo "- home-automation: Natural language device control"
 echo ""
 echo "Test it: node test.js"
 echo ""
-EOF
 
-chmod +x quickstart.sh && echo "✅ Created quickstart.sh in root directory"
