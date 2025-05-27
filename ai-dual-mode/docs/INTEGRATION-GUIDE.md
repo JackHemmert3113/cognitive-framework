@@ -6,7 +6,7 @@ This guide shows how to integrate `ai-dual-mode` into your existing projects to 
 
 1. [Installation](#installation)
 2. [Basic Integration](#basic-integration)
-3. [Complete Example: AI Test Framework](#complete-example-ai-test-framework)
+3. [Complete Example: Cognitive Test Framework](#complete-example-cognitive-test-framework)
 4. [Integration Patterns](#integration-patterns)
 5. [Best Practices](#best-practices)
 6. [Troubleshooting](#troubleshooting)
@@ -141,15 +141,15 @@ async function runMyTool(data) {
 }
 ```
 
-## Complete Example: AI Test Framework
+## Complete Example: Cognitive Test Framework
 
-Here's how to integrate `ai-dual-mode` into the `ai-test-framework` project:
+Here's how to integrate `ai-dual-mode` into the `@cognitive/test-framework` project:
 
 ### 1. Update package.json
 
 ```json
 {
-  "name": "ai-test-framework",
+  "name": "@cognitive/test-framework",
   "version": "2.0.0",
   "description": "Monorepo test framework with AI assistance",
   "dependencies": {
@@ -163,7 +163,7 @@ Here's how to integrate `ai-dual-mode` into the `ai-test-framework` project:
 ### 2. Create AI Integration Module
 
 ```javascript
-// ai-test-framework/lib/ai-integration.js
+// packages/test-framework/lib/ai-integration.js
 const { AIDualMode } = require('ai-dual-mode');
 const path = require('path');
 
@@ -446,7 +446,7 @@ module.exports = {
 ### 3. Update Main Test Runner
 
 ```javascript
-// ai-test-framework/index.js
+// packages/test-framework/index.js
 #!/usr/bin/env node
 
 const { runTests } = require('./lib/runner');

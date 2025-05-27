@@ -26,7 +26,6 @@ jobs:
         cache-dependency-path: |
           package-lock.json
           ai-dual-mode/package-lock.json
-          ai-test-framework/package-lock.json
 
     - name: Install dependencies in ai-dual-mode
       working-directory: ./ai-dual-mode
@@ -41,8 +40,8 @@ run: |
       working-directory: ./ai-dual-mode
       run: npm run lint
 
-    - name: Install dependencies in ai-test-framework
-      working-directory: ./ai-test-framework
+    - name: Install dependencies in packages/test-framework
+      working-directory: ./packages/test-framework
       run: |
         if [ -f package-lock.json ]; then
           npm ci
@@ -50,22 +49,18 @@ run: |
           npm install
         fi
 
-    - name: Lint ai-test-framework
-      working-directory: ./ai-test-framework
-      run: npm run lint
-
     - name: Test ai-dual-mode
       working-directory: ./ai-dual-mode
       run: npm test
 
-    - name: Test ai-test-framework
-      working-directory: ./ai-test-framework
+    - name: Test test-framework
+      working-directory: ./packages/test-framework
       run: npm test
 
     - name: Build ai-dual-mode (if build script exists)
       working-directory: ./ai-dual-mode
       run: npm run build || echo "No build script found, skipping"
 
-    - name: Build ai-test-framework (if build script exists)
-      working-directory: ./ai-test-framework
+    - name: Build test-framework (if build script exists)
+      working-directory: ./packages/test-framework
       run: npm run build || echo "No build script found, skipping"
