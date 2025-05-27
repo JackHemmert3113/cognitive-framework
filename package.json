@@ -9,7 +9,8 @@
     "build": "npm run build -w @cognitive/dual-mode && npm run build -w @cognitive/requirements && npm run build -w @cognitive/test-framework",
     "example:ide-driven": "node examples/ide-driven",
     "example:ai-driven": "node examples/ai-driven",
-    "quickstart": "./quickstart.sh"
+    "quickstart": "./quickstart.sh",
+    "pr-lint": "node tools/pr-linter.js"
   },
   "repository": {
     "type": "git",
