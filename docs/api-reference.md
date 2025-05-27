@@ -8,6 +8,6 @@ Links to the APIs for each package in the Cognitive Framework.
 - [@cognitive/test-framework](../packages/test-framework) - AI-assisted test generation
 - [agent-core](../agent-core) - Base agent implementations
 - [ai-dual-mode](../ai-dual-mode) - Standalone dual mode package
-- [ai-test-framework](../ai-test-framework) - Standalone test framework
+<!-- ai-test-framework package has been removed in favor of @cognitive/test-framework -->
 
 See the README in each package for detailed usage.

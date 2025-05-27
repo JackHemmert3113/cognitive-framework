@@ -5,7 +5,6 @@ yarn.lock
 pnpm-lock.yaml
 !package-lock.json
 !ai-dual-mode/package-lock.json
-!ai-test-framework/package-lock.json
 
 # Environment variables
 .env
