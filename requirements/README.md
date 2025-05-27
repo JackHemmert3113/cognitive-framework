@@ -6,7 +6,7 @@ This folder contains the canonical requirements contract, a worked example, and 
 
 - **contract.md** — The requirements format contract (canonical source)
 - **example.md** — A full example showing how requirements should be written and cross-linked
-- **prompts.md** — AI-ready prompts for generating requirements and specs by persona
+- **PROMPTS.md** — AI-ready prompts for generating requirements and specs by persona
 - **template-product-owner.md** — Requirements template for Product Owners/Business Stakeholders
 - **template-developer.md** — Requirements template for Technical Leads/Developers
 - **template-qa.md** — Requirements template for QA/Reviewers
@@ -30,7 +30,7 @@ This folder contains the canonical requirements contract, a worked example, and 
    See a canonical example of how to document and link requirements at multiple levels.
 
 3. **Use the templates and prompts**  
-   - Find persona-specific templates (`template-*.md`) and AI prompts (`prompts.md`) in this folder.  
+   - Find persona-specific templates (`template-*.md`) and AI prompts (`PROMPTS.md`) in this folder.
    - Use these when drafting new requirements, specs, or test plans—either directly, or as prompts for AI tools.
 
 4. **Add new requirements**  
@@ -54,5 +54,5 @@ See the FAQ in `contract.md` or ask in the project chat.
 
 ---
 **New:**  
-- See [`prompts.md`](./prompts.md) for ready-to-use AI prompts by persona.  
+- See [`PROMPTS.md`](./PROMPTS.md) for ready-to-use AI prompts by persona.
 - See the persona-specific templates (`template-*.md`) for a quick start on requirements, specs, and reviews.

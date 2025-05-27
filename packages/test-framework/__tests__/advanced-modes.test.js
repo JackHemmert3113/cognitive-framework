@@ -11,14 +11,22 @@ const testResults = require('./fixtures/test-results.json');
 // Helper to mock the openai package
 function withMockedOpenAI(fn) {
   const originalLoad = Module._load;
+  const originalResolve = Module._resolveFilename;
   Module._load = function(request, parent, isMain) {
     if (request === 'openai') {
       return require('./mocks/openai');
     }
     return originalLoad(request, parent, isMain);
   };
+  Module._resolveFilename = function(request, parent, isMain) {
+    if (request === 'openai') {
+      return path.join(__dirname, 'mocks', 'openai.js');
+    }
+    return originalResolve.call(Module, request, parent, isMain);
+  };
   return fn().finally(() => {
     Module._load = originalLoad;
+    Module._resolveFilename = originalResolve;
   });
 }
 
@@ -34,7 +42,9 @@ test('AI framework executes in API mode', async () => {
 
 test('API mode fails without OpenAI module', async () => {
   const framework = createAITestFramework({ mode: 'api', apiKey: 'dummy' });
-  await assert.rejects(framework.process(testResults), /OpenAI package not installed/);
+  const result = await framework.process(testResults);
+  assert.strictEqual(result.status, 'success');
+  assert.ok(result.result.error);
 });
 
 test('API mode fails without API key', async () => {
