@@ -23,24 +23,19 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: |
+          package-lock.json
+          ai-dual-mode/package-lock.json
+          ai-test-framework/package-lock.json
 
     - name: Install dependencies in ai-dual-mode
       working-directory: ./ai-dual-mode
-      run: |
-        if [ -f package-lock.json ]; then
-          npm ci
-        else
-          npm install
-        fi
-
-    - name: Install dependencies in ai-test-framework
-      working-directory: ./ai-test-framework
-      run: |
-        if [ -f package-lock.json ]; then
-          npm ci
-        else
-          npm install
-        fi
+run: |
+  if [ -f package-lock.json ]; then
+    npm ci
+  else
+    npm install
+  fi
 
     - name: Lint ai-dual-mode
       working-directory: ./ai-dual-mode
