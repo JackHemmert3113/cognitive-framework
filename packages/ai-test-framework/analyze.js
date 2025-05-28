@@ -16,13 +16,11 @@ async function main() {
     process.exit(1);
   }
 
-  let testResults;
-  try {
-    testResults = require(path.resolve(file));
-  } catch (err) {
-    console.error(`Failed to load ${file}:`, err.message);
-    process.exit(1);
-  }
+  const resolved = path.resolve(file);
+  const testResults = {
+    projectPath: resolved,
+    files: [resolved]
+  };
 
   const framework = createAITestFramework({ mode: "ide" });
   const result = await framework.process(testResults);
