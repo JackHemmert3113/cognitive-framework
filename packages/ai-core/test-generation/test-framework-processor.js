@@ -115,18 +115,42 @@ Generate Jest tests for the files with lowest coverage.`
 
   // Helper methods
   analyzeTestResults(results) {
+    console.log('analyzeTestResults input type:', typeof results);
+
+    // Ensure results is an array
+    if (!results) {
+      console.warn('analyzeTestResults received undefined input');
+      results = [];
+    } else if (!Array.isArray(results)) {
+      console.warn('analyzeTestResults received non-array input:', typeof results);
+      // Try to extract results array from common result objects
+      if (results.results && Array.isArray(results.results)) {
+        console.log('Extracting results array from results.results');
+        results = results.results;
+      } else if (results.tests && Array.isArray(results.tests)) {
+        console.log('Extracting results array from results.tests');
+        results = results.tests;
+      } else if (results.runnerResults && Array.isArray(results.runnerResults)) {
+        console.log('Extracting results array from results.runnerResults');
+        results = results.runnerResults;
+      } else {
+        console.warn('Could not extract results array, using empty array');
+        results = [];
+      }
+    }
+
     const packages = this.groupByPackage(results);
-    const failedTests = results.filter(r => !r.passed);
-    const slowTests = results.filter(r => r.duration > 1000);
-    const lowCoverageFiles = results.filter(r => (r.coverage || 0) < 50);
+    const failedTests = results.filter(r => r && !r.passed);
+    const slowTests = results.filter(r => r && r.duration > 1000);
+    const lowCoverageFiles = results.filter(r => r && (r.coverage || 0) < 50);
 
     return {
       summary: {
         totalTests: results.length,
-        passed: results.filter(r => r.passed).length,
+        passed: results.filter(r => r && r.passed).length,
         failed: failedTests.length,
-        averageDuration: this.calculateAverage(results.map(r => r.duration)),
-        averageCoverage: this.calculateAverage(results.map(r => r.coverage || 0))
+        averageDuration: this.calculateAverage(results.map(r => r && r.duration || 0)),
+        averageCoverage: this.calculateAverage(results.map(r => r && r.coverage || 0))
       },
       packages,
       failedTests,
@@ -216,15 +240,24 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
 
   // Utility methods
   groupByPackage(results) {
+    console.log('groupByPackage input type:', typeof results, Array.isArray(results) ? 'is array' : 'not an array');
+    console.log('groupByPackage input value:', JSON.stringify(results, null, 2));
+
+    // Ensure results is an array
+    if (!results || !Array.isArray(results)) {
+      console.warn('groupByPackage received non-array input:', results);
+      return {}; // Return empty object as fallback
+    }
+
     return results.reduce((acc, test) => {
-      const pkg = test.package || 'unknown';
+      const pkg = test && test.packageName || 'unknown';
       if (!acc[pkg]) {
         acc[pkg] = { tests: 0, passed: 0, failed: 0, coverage: [] };
       }
       acc[pkg].tests++;
-      if (test.passed) acc[pkg].passed++;
+      if (test && test.passed) acc[pkg].passed++;
       else acc[pkg].failed++;
-      if (test.coverage) acc[pkg].coverage.push(test.coverage);
+      if (test && test.coverage) acc[pkg].coverage.push(test.coverage);
       return acc;
     }, {});
   }
@@ -242,13 +275,20 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
 
   identifyCriticalIssues(results) {
     const issues = [];
-    const failureRate = results.filter(r => !r.passed).length / results.length;
+
+    // Ensure results is an array
+    if (!Array.isArray(results) || results.length === 0) {
+      issues.push('No test results available for analysis');
+      return issues;
+    }
+
+    const failureRate = results.filter(r => r && !r.passed).length / results.length;
 
     if (failureRate > 0.2) {
       issues.push(`High failure rate: ${(failureRate * 100).toFixed(1)}% of tests failing`);
     }
 
-    const avgCoverage = this.calculateAverage(results.map(r => r.coverage || 0));
+    const avgCoverage = this.calculateAverage(results.map(r => r && r.coverage || 0));
     if (avgCoverage < 60) {
       issues.push(`Low overall coverage: ${avgCoverage.toFixed(1)}%`);
     }
@@ -257,11 +297,21 @@ ${analysis.slowTests.slice(0, 3).map(t => `- ${t.name} (${t.duration}ms)`).join(
   }
 
   calculateCoverageStats(results) {
-    const coverages = results.map(r => r.coverage || 0);
+    // Ensure results is an array
+    if (!Array.isArray(results) || results.length === 0) {
+      return {
+        average: 0,
+        min: 0,
+        max: 0,
+        below80: 0
+      };
+    }
+
+    const coverages = results.map(r => r && r.coverage || 0);
     return {
       average: this.calculateAverage(coverages),
-      min: Math.min(...coverages),
-      max: Math.max(...coverages),
+      min: coverages.length > 0 ? Math.min(...coverages) : 0,
+      max: coverages.length > 0 ? Math.max(...coverages) : 0,
       below80: coverages.filter(c => c < 80).length
     };
   }
