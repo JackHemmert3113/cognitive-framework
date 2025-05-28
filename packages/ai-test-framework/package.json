@@ -9,7 +9,8 @@
   "scripts": {
     "test": "NODE_V8_COVERAGE=coverage node --test",
     "test:coverage": "NODE_V8_COVERAGE=coverage node --test",
-    "build": "echo \"Building test-framework\""
+    "build": "echo \"Building test-framework\"",
+    "analyze": "node analyze.js"
   },
   "repository": {
     "type": "git",
