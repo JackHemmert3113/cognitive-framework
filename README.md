@@ -23,7 +23,6 @@ Cognitive empowers developers and AI to collaborate seamlessly. Whether you're c
 
 - [`packages/agent-core`](./packages/agent-core): Core utilities for building AI agents
 - [`packages/ai-core`](./packages/ai-core): Shared AI functionality (adapters, analyzers, model selectors)
-- [`packages/ai-dual-mode`](./packages/ai-dual-mode): Standalone dual-mode implementation
 - [`packages/dual-mode`](./packages/dual-mode): Dual-mode adapter for IDE and API-driven tools
 - [`packages/ai-test-framework`](./packages/ai-test-framework): AI-generated test suite integration
 - [`packages/requirements`](./packages/requirements): Framework for structured, AI-readable requirements
@@ -51,7 +50,6 @@ npm run example:ai-driven     # AI-orchestrated workflow
 | ------- | ----------- |
 | [`@cognitive/agent-core`](./packages/agent-core) | Base agent utilities |
 | [`@cognitive/ai-core`](./packages/ai-core) | Shared AI functionality |
-| [`@forge/dual-mode`](./packages/ai-dual-mode) | Standalone dual-mode package |
 | [`@cognitive/dual-mode`](./packages/dual-mode) | Dual-mode adapter for AI tools |
 | [`@cognitive/ai-test-framework`](./packages/ai-test-framework) | AI-generated test suite integration |
 | [`@cognitive/requirements`](./packages/requirements) | Structured, AI-ready requirements |
