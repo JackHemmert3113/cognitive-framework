@@ -28,6 +28,7 @@ Cognitive empowers developers and AI to collaborate seamlessly. Whether you're c
 - [`packages/requirements`](./packages/requirements): Framework for structured, AI-readable requirements
 - [`packages/forge-agent`](./packages/forge-agent): CLI and compatibility tooling
 - [`examples/`](./examples): Example projects and workflows
+All packages reside inside the `packages/` directory.
 
 ## 🚀 Quick Start
 
