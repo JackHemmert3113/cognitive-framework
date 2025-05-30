@@ -10,7 +10,8 @@
     "example:ide-driven": "node examples/ide-driven",
     "example:ai-driven": "node examples/ai-driven",
     "quickstart": "./quickstart.sh",
-    "pr-lint": "node tools/pr-linter.js"
+    "pr-lint": "node tools/pr-linter.js",
+    "update-docs-index": "node tools/generate-doc-index.js"
   },
   "repository": {
     "type": "git",
