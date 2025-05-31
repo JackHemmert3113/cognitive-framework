@@ -69,7 +69,7 @@ framework.process(rawText)
 ## ⚙️ How It Works
 
 - Parses requirements from structured objects or plain text.
-- Validates and enhances requirements for clarity and completeness.
+- Validates requirements against the canonical hierarchy (vision → business value → epic → feature → story → task) and checks required metadata fields.
 - Generates `.ai/` context files that can help AI assistants generate code, documentation, or tests.
 - Designed to be used in both human-driven (IDE) and automated (API) workflows.
 
