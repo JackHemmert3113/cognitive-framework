@@ -114,3 +114,5 @@ MIT License
 - [Product Owner / Business Stakeholder Requirements Template](packages/requirements-old/template-product-owner.md)
 - [Reviewer / QA Requirements Template](packages/requirements-old/template-qa.md)
 - [@cognitive/requirements](packages/requirements/README.md)
+
+- [Adaptive Wellness Documentation Registry](ADAPTIVE_WELLNESS_REGISTRY.md)
