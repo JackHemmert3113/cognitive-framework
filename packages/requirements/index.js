@@ -228,6 +228,27 @@ class RequirementsFramework {
   }
 }
 
+let runCLI;
+try {
+  ({ runCLI } = require('@cognitive/ai-test-framework'));
+} catch {
+  ({ runCLI } = require('../ai-test-framework'));
+}
+
+/**
+ * Process a requirement and run the AI test framework.
+ * @param {object|string} input Requirement object or markdown text
+ * @param {string} [projectPath=process.cwd()] Project directory for tests
+ * @param {object} [options] Framework options
+ * @returns {Promise<object>} Result with requirement and test output
+ */
+async function processAndTest(input, projectPath = process.cwd(), options = {}) {
+  const rf = new RequirementsFramework(options);
+  const requirement = await rf.process(input);
+  const testResult = await runCLI([projectPath]);
+  return { requirement, testResult };
+}
+
 /**
  * exported exported API
  * @example
@@ -235,5 +256,6 @@ class RequirementsFramework {
  */
 // Added in v1.0
 module.exports = {
-  RequirementsFramework
+  RequirementsFramework,
+  processAndTest
 };

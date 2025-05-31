@@ -87,6 +87,11 @@ framework.process(rawText)
 - **requirement:** Structured requirement object or plain text
 - **Returns:** Promise resolving to processed requirement data
 
+### `.processAndTest(requirement | text, projectPath, options?)`
+
+- **projectPath:** Directory for the AI Test Framework (default: current working directory)
+- **Returns:** Promise resolving to `{ requirement, testResult }`
+
 ---
 
 ## 🛠️ Integration
@@ -94,6 +99,14 @@ framework.process(rawText)
 Works out-of-the-box with:
 - [`@cognitive/dual-mode`](../dual-mode) — Dual-mode context file/API integration
 - [`@cognitive/ai-test-framework`](../ai-test-framework) — Automatic test generation
+
+### Command Line
+
+Use the `cogreq` command to process a requirement file and immediately run the AI Test Framework:
+
+```bash
+cogreq requirement.md ./my-project
+```
 
 ---
 
