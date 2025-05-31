@@ -195,6 +195,10 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for how modules interact and how prompts 
 
 1.0.0 – Custom prompts supported (Added in v0.1).
 
+## Roadmap
+
+The framework is currently at version 0.2.0 for the requirements package. We are working toward a stable 1.0 release with a locked API and additional integrations.
+
 ## Links
 
 - [MODES](MODES.md)
