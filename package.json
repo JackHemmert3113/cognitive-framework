@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "npm run test -w @cognitive/ai-test-framework",
+    "test": "npm run test -w @cognitive/ai-test-framework && npm run test -w @cognitive/requirements",
     "build": "npm run build -w @cognitive/dual-mode && npm run build -w @cognitive/requirements && npm run build -w @cognitive/ai-test-framework",
     "example:ide-driven": "node examples/ide-driven",
     "example:ai-driven": "node examples/ai-driven",
@@ -33,6 +33,9 @@
     "url": "https://github.com/JackHemmert3113/cognitive-framework/issues"
   },
   "homepage": "https://github.com/JackHemmert3113/cognitive-framework#readme",
+  "bin": {
+    "cogreq": "./bin/cogreq.js"
+  },
   "workspaces": [
     "packages/*"
   ],
