@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "A robust framework for defining, parsing, and managing software requirements in a way that's readable and actionable for both humans and AI",
   "main": "index.js",
+  "bin": {
+    "cogreq": "bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"Building requirements\""

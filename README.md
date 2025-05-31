@@ -77,6 +77,13 @@ const requirement = await framework.process(
 );
 ```
 
+To directly run tests using your requirement, use the integrated helper:
+
+```javascript
+const { processAndTest } = require('@cognitive/requirements');
+await processAndTest('./requirement.md', './my-app');
+```
+
 ### Dual Mode
 Build tools that work both as IDE assistants and standalone automation.
 
