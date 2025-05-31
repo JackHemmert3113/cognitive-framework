@@ -64,6 +64,26 @@ framework.process(rawText)
   });
 ```
 
+### Nested Requirements Example
+
+```js
+const vision = {
+  id: 'VIS-100',
+  type: 'vision',
+  description: 'overall vision',
+  metadata: { owner: 'dev', status: 'open', priority: 'P1', estimate: '1d', tags: 'demo', created: '2024-01-01', lastUpdated: '2024-01-02', team: 'core' },
+  children: [
+    {
+      id: 'BV-10',
+      type: 'business_value',
+      description: 'business value',
+      metadata: { owner: 'dev', status: 'open', priority: 'P1', estimate: '1d', tags: 'demo', created: '2024-01-01', lastUpdated: '2024-01-02', team: 'core' }
+    }
+  ]
+};
+framework.process(vision);
+```
+
 ---
 
 ## ⚙️ How It Works
@@ -81,6 +101,7 @@ framework.process(rawText)
 
 - **options.mode:** `'ide-driven' | 'api-driven'` (default: `'ide-driven'`)
 - **options.outputDir:** Directory for generated AI context files (default: `./.ai`)
+- **options.requiredMetadata:** Array of metadata fields that must be present. Defaults to the canonical contract fields.
 
 ### `.process(requirement | text)`
 
@@ -108,6 +129,14 @@ Use the `cogreq` command to process a requirement file and immediately run the A
 cogreq requirement.md ./my-project
 ```
 
+Common flags:
+
+```bash
+cogreq requirement.md ./my-project --output-dir ./custom-ai
+cogreq requirement.md ./my-project --skip-tests
+cogreq requirement.md --format text
+```
+
 ---
 
 ## 📄 Example Context Files
@@ -116,6 +145,14 @@ When you process a requirement, the following files may appear in `.ai/`:
 - `analysis.md` — AI-friendly requirement analysis
 - `acceptance_criteria.md` — Clear list of requirements
 - `PROMPTS.md` — Prompts for AI code generation
+
+### TypeScript
+
+This package ships with bundled type definitions so you can import it in a TypeScript project:
+
+```ts
+import { RequirementsFramework } from '@cognitive/requirements';
+```
 
 ---
 

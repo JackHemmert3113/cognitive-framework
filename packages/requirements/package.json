@@ -1,8 +1,9 @@
 {
   "name": "@cognitive/requirements",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A robust framework for defining, parsing, and managing software requirements in a way that's readable and actionable for both humans and AI",
   "main": "index.js",
+  "types": "index.d.ts",
   "bin": {
     "cogreq": "bin/cli.js"
   },
