@@ -84,6 +84,12 @@ const { processAndTest } = require('@cognitive/requirements');
 await processAndTest('./requirement.md', './my-app');
 ```
 
+The repository also exposes a simple CLI. After installing dependencies you can run:
+
+```bash
+npx cogreq requirement.md ./my-app
+```
+
 ### Dual Mode
 Build tools that work both as IDE assistants and standalone automation.
 
@@ -133,6 +139,7 @@ Ideal for rapid prototyping and standard patterns
 - [Architecture Overview](docs/ARCHITECTURE.md)
 - [API Reference](docs/api-reference.md)
 - [Master Documentation Index](docs/MASTER_DOC_INDEX.md)
+- Requirements templates and contract are in [`packages/requirements-old`](./packages/requirements-old)
 - [Contributing Guide](CONTRIBUTING.md)
 
 ## 🌱 Community
@@ -177,6 +184,8 @@ const processor = {
 
 const tool = AIDualMode.create('demo', processor);
 ```
+
+For a full workflow demonstration see [`examples/end-to-end`](examples/end-to-end).
 
 ## 🔍 Under the Hood
 
