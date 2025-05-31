@@ -20,6 +20,9 @@
 // 💡 Helpers or utilities
 'use strict';
 
+const fs = require('fs').promises;
+const path = require('path');
+
 /**
  * RequirementsFramework parses and validates requirements according to the
  * canonical contract. It accepts either structured objects or markdown text and
@@ -79,6 +82,9 @@ class RequirementsFramework {
         : this._normalizeObject(input);
 
     this._validateRecursive(req);
+
+    await this._generateFiles(req);
+
     return req;
   }
 
@@ -156,6 +162,69 @@ class RequirementsFramework {
         }
       }
     }
+  }
+
+  async _generateFiles(req) {
+    const dir = this.options.outputDir;
+    await fs.mkdir(dir, { recursive: true });
+
+    const files = {
+      [path.join(dir, 'analysis.md')]: this._generateAnalysis(req),
+      [path.join(dir, 'acceptance_criteria.md')]: this._generateAcceptanceCriteria(req),
+      [path.join(dir, 'PROMPTS.md')]: this._generatePrompts()
+    };
+
+    await Promise.all(
+      Object.entries(files).map(([f, c]) => fs.writeFile(f, c))
+    );
+  }
+
+  _generateAnalysis(req) {
+    const ts = new Date().toISOString();
+    const lines = [
+      '# Requirement Analysis',
+      `Generated: ${ts}`,
+      '',
+      `**ID:** ${req.id}`,
+      `**Type:** ${req.type}`,
+      req.title ? `**Title:** ${req.title}` : '',
+      '',
+      '## Metadata'
+    ];
+    for (const [k, v] of Object.entries(req.metadata || {})) {
+      lines.push(`- **${k}:** ${v}`);
+    }
+    lines.push('', '## Description', req.description || '');
+    return lines.join('\n');
+  }
+
+  _generateAcceptanceCriteria(req) {
+    const lines = ['# Acceptance Criteria', ''];
+    const walk = r => {
+      if (Array.isArray(r.acceptanceCriteria)) {
+        for (const c of r.acceptanceCriteria) {
+          lines.push(`- ${c}`);
+        }
+      }
+      if (Array.isArray(r.children)) {
+        for (const child of r.children) walk(child);
+      }
+    };
+    walk(req);
+    return lines.join('\n');
+  }
+
+  _generatePrompts() {
+    const dir = this.options.outputDir;
+    return `# Requirement Prompts\n\n` +
+      `## Analyze Requirement\n` +
+      '```\n' +
+      `Review ${path.join(dir, 'analysis.md')} for key details and summarize.\n` +
+      '```\n\n' +
+      `## Implement\n` +
+      '```\n' +
+      `Ensure all points in ${path.join(dir, 'acceptance_criteria.md')} are satisfied.\n` +
+      '```\n';
   }
 }
 
