@@ -187,6 +187,10 @@ const tool = AIDualMode.create('demo', processor);
 
 For a full workflow demonstration see [`examples/end-to-end`](examples/end-to-end).
 
+## Requirement/Test Audit
+
+Run `node tools/audit-requirements.js` to scan the repository for requirement and test mismatches. The tool generates placeholder markdown files for missing requirements and stub test files for untested requirements. Review the changes listed in `audit-summary.json` before committing.
+
 ## 🔍 Under the Hood
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for how modules interact and how prompts are merged.
