@@ -116,3 +116,4 @@ MIT License
 - [@cognitive/requirements](packages/requirements/README.md)
 
 - [Adaptive Wellness Documentation Registry](ADAPTIVE_WELLNESS_REGISTRY.md)
+- [Product Requirements Document](PRD.md)
